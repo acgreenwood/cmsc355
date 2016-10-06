@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Itr1</string>
+    <string name="search_show">Search Show</string>
+    <string name="search">Search</string>
+    <string name="app_greeting_message">Welcome to the Series Encyclopedia Archive Network, or SEAN for short! Enter the name of your series you would like to look up in the field below, or add a new series into the app database!</string>
+    <string name="search_by_series_title">Search by series title</string>
+    <string name="genre">Genre</string>
+    <string name="search_by">Search by:</string>
+    <string name="show_status">Show Status</string>
+    <string name="cancelled_on_hold">Cancelled/On Hold</string>
+    <string name="completed">Completed</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="add_a_new_series">Add a new Series</string>
+    <string name="genre_field">Genre</string>
+    <string name="name_of_series">Name of Series</string>
+    <string name="show_type">Show Type</string>
+    <string name="add_series">Add Series</string>
+    <string name="cancel">Cancel Addition</string>
+    <string name="no">No</string>
+    <string name="series_not_found_message">Oh? This show does not exist in our database. Would you like to add the show you\'ve searched into the database as a new series?</string>
+    <string name="yes">Yes</string>
+    <string name="series_addition_message">Enter your information on the series you will be adding:</string>
+    <string name="series_name_bar">Enter Series Name</string>
+    <string name="app_iteration_message">Note: This is a WIP app. Features will be added in future iterations of the app.</string>
+</resources>
