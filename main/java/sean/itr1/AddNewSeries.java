@@ -29,8 +29,8 @@ public class AddNewSeries extends AppCompatActivity {
         }
 
         else if (choice.getId() == R.id.cancel_action){
-            Intent returnToMain = new Intent(this, MainActivity.class);
-            startActivity(returnToMain);      //If selected, returns user to MainActivity window. (Test to see if the click does accomplish the specified action)
+            Intent returnToSearch = new Intent(this, SearchPage.class);
+            startActivity(returnToSearch);      //If selected, returns user to MainActivity window. (Test to see if the click does accomplish the specified action)
         }
     }
 }
