@@ -1,4 +1,4 @@
-package sean.itr1;
+package com.successsquad.seanapplication;
 
 /**
  * Created by northwind on 10/6/2016.
@@ -14,20 +14,20 @@ public class Series {
     }
 
     private int series_id;
-    private String series_name;
+    private String series_title;
     private String series_type;
     private String series_genre;
     private String series_description;
 
-    public Series(int id, String name, String type, String genre) {
+    public Series(int id, String title, String type, String genre) {
         series_id = id;
-        series_name = name;
+        series_title = title;
         series_type = type;
         series_genre = genre;
     }
 
-    public String getName() {
-        return series_name;
+    public String getTitle() {
+        return series_title;
     }
 
     public String getType() {
@@ -41,6 +41,9 @@ public class Series {
     public String getDescription() {
         return series_description;
     }
+
+    public int getID() { return series_id; }
+
     public void setDescription(String description) {
         series_description = description;
     }
