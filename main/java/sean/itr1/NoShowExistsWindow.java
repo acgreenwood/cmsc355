@@ -31,7 +31,7 @@ public class NoShowExistsWindow extends AppCompatActivity {
         }
 
         else if (choice.getId() == R.id.decline_addition_button){
-            Intent returnToMain = new Intent(this, MainActivity.class);
+            Intent returnToMain = new Intent(this, SearchPage.class);
             startActivity(returnToMain);      //If selected, returns user to MainActivity window.
         }
     }
