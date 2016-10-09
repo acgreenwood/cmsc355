@@ -13,13 +13,13 @@ public class SeriesArchiveAPI {
      */
     public static Series[] searchByTerms(String searchTerms) {
         /** TODO this only accesses MemoryDatase, temp memory*/
-        return (Series[]) MemoryDatabase.searchByTerms(searchTerms).toArray();
+        return MemoryDatabase.searchByTerms(searchTerms).toArray(new Series[] {});
     }
 
     /** dangerous once the archive becomes big **/
     public static Series[] getArchive() {
         /** TODO this only accesses MemoryDatase, temp memory*/
-        return (Series[]) MemoryDatabase.getArchive().toArray();
+        return MemoryDatabase.getArchive().toArray(new Series[] {});
     }
 
     public static Series getSeriesByID(int id) {

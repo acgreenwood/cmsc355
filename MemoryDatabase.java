@@ -45,7 +45,7 @@ public class MemoryDatabase {
         //serach for titles containing at least one search term
         for(Series element: archive) {
             for (int i = 0; i < termTokens.length; i++) {
-                if (element.getTitle().contains(termTokens[i])) {
+                if (element.getTitle().toLowerCase().contains(termTokens[i].toLowerCase())) {
                     findings.add(element);
                     break;
                 }
@@ -55,10 +55,10 @@ public class MemoryDatabase {
         //search for titles with all the terms
         //this might get slow for long lists
         for (int j = 2; j <= termTokens.length; j++) {
-            for (int k = 0; k <= findings.size(); k++) {
+            for (int k = 0; k < findings.size(); k++) {
                 int termsFound = 0;
                 for (int i = 0; i < termTokens.length; i++) {
-                    if (findings.get(k).getTitle().contains(termTokens[i])) {
+                    if (findings.get(k).getTitle().toLowerCase().contains(termTokens[i].toLowerCase())) {
                         termsFound++;
                     }
                     if (termsFound >= j) {
@@ -69,8 +69,8 @@ public class MemoryDatabase {
         }
 
         //search for titles with all terms in order together
-        for (int k = 0; k <= findings.size(); k++) {
-            if( findings.get(k).getTitle().contains(terms)) {
+        for (int k = 0; k < findings.size(); k++) {
+            if( findings.get(k).getTitle().toLowerCase().contains(terms.toLowerCase())) {
                 findings.add(findings.remove(k));
             }
         }
