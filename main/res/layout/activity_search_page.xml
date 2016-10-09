@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="sean.itr1.MainActivity">
+    tools:context="sean.itr1.SearchPage">
 
 
     <TextView
@@ -36,7 +36,7 @@
 
     <Button
         android:text="@string/search"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/search_confirm_basic"
         android:layout_centerVertical="true"
@@ -45,12 +45,22 @@
 
     <Button
         android:text="@string/add_a_new_series"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/add_new_series_button"
         android:layout_below="@+id/search_confirm_basic"
         android:layout_centerHorizontal="true"
         android:onClick="onClick"/>
+
+    <Button
+        android:text="@string/homepage_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_new_series_button"
+        android:layout_alignRight="@+id/search_confirm_basic"
+        android:layout_alignEnd="@+id/search_confirm_basic"
+        android:id="@+id/return_home_button"
+        android:onClick="onClick" />
 
     <TextView
         android:text="@string/app_iteration_message"
