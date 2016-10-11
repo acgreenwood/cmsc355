@@ -15,13 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchPage"/>
+        <activity android:name=".SearchPage" />
         <activity android:name=".AddNewSeries" />
         <activity android:name=".NoShowExistsWindow" />
         <activity android:name=".MyArchivePage" />
         <activity android:name=".AppSettings" />
-        <activity android:name=".MyProfile">
-        </activity>
+        <activity android:name=".MyProfile" />
+        <activity android:name=".ListDisplay2" />
     </application>
 
 </manifest>
