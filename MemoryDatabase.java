@@ -42,7 +42,7 @@ public class MemoryDatabase {
         //separate each search term into termTokens
         String[] termTokens = terms.split(" ");
 
-        //serach for titles containing at least one search term
+        //search for titles containing at least one search term
         for(Series element: archive) {
             for (int i = 0; i < termTokens.length; i++) {
                 if (element.getTitle().toLowerCase().contains(termTokens[i].toLowerCase())) {

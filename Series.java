@@ -42,7 +42,9 @@ public class Series {
         return series_description;
     }
 
-    public int getID() { return series_id; }
+    public int getID() {
+        return series_id;
+    }
 
     public void setDescription(String description) {
         series_description = description;
