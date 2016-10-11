@@ -21,7 +21,7 @@
         <activity android:name=".MyArchivePage" />
         <activity android:name=".AppSettings" />
         <activity android:name=".MyProfile" />
-        <activity android:name=".ListDisplay2" />
+        <activity android:name=".ListDisplay" />
     </application>
 
 </manifest>

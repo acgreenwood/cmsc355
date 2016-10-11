@@ -25,7 +25,7 @@
         android:text="@string/searchOption"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/search_option"
+        android:id="@+id/home_search_button"
         android:onClick="onClick"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -34,11 +34,11 @@
         android:text="@string/myArchiveOption"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/myArchive"
+        android:id="@+id/my_archive_button"
         android:onClick="onClick"
-        android:layout_below="@+id/search_option"
-        android:layout_alignLeft="@+id/search_option"
-        android:layout_alignStart="@+id/search_option" />
+        android:layout_below="@+id/home_search_button"
+        android:layout_alignLeft="@+id/home_search_button"
+        android:layout_alignStart="@+id/home_search_button" />
 
     <Button
         android:text="@string/settingsOption"
@@ -46,9 +46,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/settings_button"
         android:onClick="onClick"
-        android:layout_below="@+id/myArchive"
-        android:layout_alignLeft="@+id/myArchive"
-        android:layout_alignStart="@+id/myArchive" />
+        android:layout_below="@+id/my_archive_button"
+        android:layout_alignLeft="@+id/my_archive_button"
+        android:layout_alignStart="@+id/my_archive_button" />
 
     <Button
         android:text="@string/profileOption"
