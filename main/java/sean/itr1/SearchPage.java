@@ -10,17 +10,20 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
 import android.view.View;
+import android.widget.TextView;
 
 public class SearchPage extends AppCompatActivity {
 
 
     Button search,addNewSeries,returnHome;
+    TextView searchTerms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
 
+        searchTerms = (TextView)findViewById(R.id.search_show_title);
         search = (Button)findViewById(R.id.search_confirm_basic);        //"Search" button
         addNewSeries = (Button)findViewById(R.id.add_new_series_button); //"Add A New Series" button.
         returnHome = (Button)findViewById(R.id.return_home_button);      //"Return to Home Page" button.
@@ -28,8 +31,18 @@ public class SearchPage extends AppCompatActivity {
 
     public void onClick(View choice){
         if (choice.getId() == R.id.search_confirm_basic){
-            Intent search = new Intent(this, NoShowExistsWindow.class);
-            startActivity(search);    //If selected, app searches its database for the series name. Currently no form of database exists, so it should bring users to the NoShowExistsWindow xml.
+            System.out.println("prepare for failure");
+            //System.out.println(SeriesArchiveAPI.searchByTerms("").length);
+            if (SeriesArchiveAPI.searchByTerms(searchTerms.getText().toString()).length == 0) {
+                Intent search = new Intent(this, NoShowExistsWindow.class);
+                startActivity(search);    //If selected, app searches its database for the series name. Currently no form of database exists, so it should bring users to the NoShowExistsWindow xml.
+            }
+            else {
+                Intent search = new Intent(this, ListDisplay2.class);
+                //search.putExtra("Search Results", SeriesArchiveAPI.searchByTerms(searchTerms.getText().toString())); //this string may need to be changed
+                search.putExtra("Search Terms", searchTerms.getText().toString()); // testing purposes
+                startActivity(search);
+            }
         }
 
         else if (choice.getId() == R.id.add_new_series_button){
