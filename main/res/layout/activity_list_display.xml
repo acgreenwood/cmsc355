@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="sean.itr1.ListDisplay2">
+    tools:context=".ListDisplay">
 
     <ListView
         android:id="@+id/show_list"

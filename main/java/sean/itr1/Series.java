@@ -46,6 +46,9 @@ public class Series {
         return series_id;
     }
 
+    public void setID(int id) {
+        series_id = id;
+    }
     public void setDescription(String description) {
         series_description = description;
     }

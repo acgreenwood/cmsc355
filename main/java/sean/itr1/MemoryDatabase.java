@@ -13,7 +13,7 @@ public class MemoryDatabase {
     }
 
     static {
-        archive.add(new Series(1, "Stranger Things", "television", "mystery"));
+        archive.add(new Series(0, "Stranger Things", "television", "mystery"));
     }
 
     /**
@@ -81,6 +81,7 @@ public class MemoryDatabase {
 
 
     public static void addSeries(Series new_series) {
+        new_series.setID(archive.size());
         archive.add(new_series);
     }
 }
