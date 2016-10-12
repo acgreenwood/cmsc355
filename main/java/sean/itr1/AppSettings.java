@@ -8,20 +8,32 @@ import android.widget.Button;
 
 public class AppSettings extends AppCompatActivity {
 
-    Button returnHomeFromSettings;
+    Button returnHomeFromSettings, notificationSettings, appearanceSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_archive_page);
 
-        returnHomeFromSettings = (Button)findViewById(R.id.returnHome2);
+        returnHomeFromSettings = (Button)findViewById(R.id.returnHome2);  //"Return Home" button.
+        notificationSettings = (Button)findViewById(R.id.notificationSettings);  //"Notification Settings" button.
+        appearanceSettings = (Button)findViewById(R.id.notificationSettings);  //"Appearance Settings" button.
     }
 
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome2){
             Intent settingsToHome = new Intent(this, HomePage.class);
             startActivity(settingsToHome);    //Returns user back to the Home Page
+        }
+
+        else if (choice.getId() == R.id.notifications_button){
+            Intent notificationsSettings = new Intent(this, NotificationSettings.class);
+            startActivity(notificationsSettings);    //If selected, brings user to the notifications settings screen (specified as activity_notification_settings.xml/NotificationSettings.class).
+        }
+
+        else if (choice.getId() == R.id.appearance_button){
+            Intent appearanceSettings = new Intent(this, AppearanceSettings.class);
+            startActivity(appearanceSettings);    //If selected, brings user to the appearance settings screen (specified as activity_appearance_settings.xml/AppearanceSettings.class).
         }
     }
 }
