@@ -31,13 +31,13 @@ public class SearchPageTests {
     @Rule
     public ActivityTestRule<SearchPage> SearchPageActvityTestRule = new ActivityTestRule<SearchPage>(SearchPage.class);
 
-    //Add a series: Scenario 2
+    //Issue: Add a series: Scenario 2: click add series
     @Test
-    public void goToAddSeriesAndAdd() {
+    public void clickAddSeries() {
         Intents.init();
         onView(withId(R.id.add_new_series_button)).perform(click());
-        onView(withId(R.id.add_series_to_database)).perform(click());
         intended(hasComponent(AddNewSeries.class.getName()));
+        onView(withId(R.id.add_series_to_database)).perform(click());
         onView(withId(R.id.add_new_series_button)).check(matches(isDisplayed())); //checking to see if we are back at search page
         Intents.release();
     }
@@ -51,7 +51,6 @@ public class SearchPageTests {
         intended(hasComponent(ListDisplay.class.getName()));
         onView(withId(R.id.show_list)).check(matches(isDisplayed())); //checking to see if we are at ListDisplay
         Intents.release();
-        Espresso.pressBack();
     }
 
     //Matcher for listview size
@@ -70,15 +69,28 @@ public class SearchPageTests {
 
     //Issue: Search the SEAN archive: Scenario 3
     @Test
-    public void searchBlankTermsGetWholeArchive() {
-        Intents.init();
+    public void searchBlankTerms() {
         onView(withId(R.id.add_new_series_button)).perform(click());
         onView(withId(R.id.add_series_to_database)).perform(click());
         onView(withId(R.id.search_show_title)).perform(typeText(""));
+
         onView(withId(R.id.search_confirm_basic)).perform(click());
-        intended(hasComponent(ListDisplay.class.getName()));
-        onView(withId(R.id.show_list)).check(matches(withSize(MemoryDatabase.getArchiveSize()))); //checking to see if size of list matches size of archive
-        Intents.release();
-        Espresso.pressBack();
+
+        onView(withId(R.id.show_list)).check(matches(withSize(SeriesArchiveAPI.getArchiveSize()))); //checking to see if size of list matches size of archive
     }
+
+    //Issue: Search the SEAN archive: Scenario 4
+    @Test
+    public void searchNonExistingShow() {
+        onView(withId(R.id.add_new_series_button)).perform(click());
+        onView(withId(R.id.add_series_to_database)).perform(click());
+        onView(withId(R.id.search_show_title)).perform(typeText("asdfjkl;qweruiop"));
+
+        Intents.init();
+        onView(withId(R.id.search_confirm_basic)).perform(click());
+        intended(hasComponent(NoShowExistsWindow.class.getName()));
+
+        Intents.release();
+    }
+
 }

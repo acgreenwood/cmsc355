@@ -22,6 +22,8 @@
         <activity android:name=".AppSettings" />
         <activity android:name=".MyProfile" />
         <activity android:name=".ListDisplay" />
+        <activity android:name=".NotificationSettings" />
+        <activity android:name=".AppearanceSettings" />
     </application>
 
 </manifest>

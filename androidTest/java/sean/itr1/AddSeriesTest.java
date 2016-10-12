@@ -3,6 +3,7 @@ package sean.itr1;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import static org.junit.Assert.assertEquals;
 
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
@@ -23,24 +24,16 @@ public class AddSeriesTest {
     @Rule
     public ActivityTestRule<AddNewSeries> AddSeriesActvityTestRule = new ActivityTestRule<AddNewSeries>(AddNewSeries.class);
 
+
+    //Issue: Add a series: Senario 3: add series to database
     @Test
-    public void pressHomeSearchButton() {
-        Intents.init();
-        onView(withId(R.id.series_name_edit_text)).perform(typeText("Bourne Identity"));
+    public void addSeriesToDatabase() {
+        int archiveSize = SeriesArchiveAPI.getArchiveSize();
+        onView(withId(R.id.series_name_edit_text)).perform(typeText("qwertyui"));
         onView(withId(R.id.series_type_edit_text)).perform(typeText("movie"));
         onView(withId(R.id.series_genre_edit_text)).perform(typeText("action"));
         onView(withId(R.id.add_series_to_database)).perform(click());
-        intended(hasComponent(SearchPage.class.getName()));
-        Intents.release();
+        assertEquals(SeriesArchiveAPI.getArchiveSize(), archiveSize + 1); //check to see if archive grew in size
+        assert(SeriesArchiveAPI.searchByTerms("qwertyui").length >= 1); // check to see if searching for the title returns at least one result
     }
-    /*@Test
-    public void pressHomeSearchButton() {
-        Intents.init();
-        onView(withId(R.id.series_name_edit_text)).perform(typeText(""));
-        onView(withId(R.id.series_type_edit_text)).perform(typeText(""));
-        onView(withId(R.id.series_genre_edit_text)).perform(typeText(""));
-        onView(withId(R.id.add_series_to_database)).perform(click());
-        intended(hasComponent(SearchPage.class.getName()));
-        Intents.release();
-    }*/
 }

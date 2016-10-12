@@ -28,4 +28,24 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/returnHome2"
         android:onClick="onClick" />
+
+    <Button
+        android:text="notification settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notifications_button"
+        android:layout_below="@+id/returnHome2"
+        android:layout_alignLeft="@+id/returnHome2"
+        android:layout_alignStart="@+id/returnHome2"
+        android:onClick="onClick" />
+
+    <Button
+        android:text="appearance settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appearance_button"
+        android:layout_below="@+id/notifications_button"
+        android:layout_alignLeft="@+id/notifications_button"
+        android:layout_alignStart="@+id/notifications_button"
+        android:onClick="onClick" />
 </RelativeLayout>

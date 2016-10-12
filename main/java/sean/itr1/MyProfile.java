@@ -13,15 +13,14 @@ public class MyProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_archive_page);
+        setContentView(R.layout.activity_my_profile);
 
         returnHomeFromProfile = (Button)findViewById(R.id.returnHome3);
     }
 
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome3){
-            Intent profileToHome = new Intent(this, HomePage.class);
-            startActivity(profileToHome);    //If selected, app searches its database for the series name. Currently no form of database exists, so it should bring users to the NoShowExistsWindow xml.
+            finish(); //Returns to previous page
         }
     }
 }

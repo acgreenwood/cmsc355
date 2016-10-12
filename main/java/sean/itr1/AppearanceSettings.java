@@ -13,7 +13,7 @@ public class AppearanceSettings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appearance_settings_page);
+        setContentView(R.layout.activity_appearance_settings);
 
         returnHomeFromAppearanceSettings = (Button)findViewById(R.id.returnHome5);  //"Return Home" button.
 
@@ -21,8 +21,7 @@ public class AppearanceSettings extends AppCompatActivity {
 
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome5){
-            Intent settingsToHome = new Intent(this, HomePage.class);
-            startActivity(settingsToHome);    //Returns user back to the Home Page
+            finish();   //Returns user back to the Home Page, assuming that was the last page
         }
     }
 }

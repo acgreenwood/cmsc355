@@ -21,8 +21,7 @@ public class MyArchivePage extends AppCompatActivity {
 
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome1){
-            Intent archiveToHome = new Intent(this, HomePage.class);
-            startActivity(archiveToHome);    //Returns user back to the Home Page
+            finish(); // goes back to last page
         }
     }
 }

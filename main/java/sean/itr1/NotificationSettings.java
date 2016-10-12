@@ -13,7 +13,7 @@ public class NotificationSettings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification_settings_page);
+        setContentView(R.layout.activity_notification_settings);
 
         returnHomeFromNotificationSettings = (Button)findViewById(R.id.returnHome4);  //"Return Home" button.
 
@@ -21,8 +21,7 @@ public class NotificationSettings extends AppCompatActivity {
 
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome4){
-            Intent settingsToHome = new Intent(this, HomePage.class);
-            startActivity(settingsToHome);    //Returns user back to the Home Page
+            finish(); //Returns user back to the Home Page, assuming that was their last page
         }
     }
 }

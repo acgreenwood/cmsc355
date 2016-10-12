@@ -30,4 +30,8 @@ public class SeriesArchiveAPI {
     public static void addSeries(Series new_series) {
         MemoryDatabase.addSeries(new_series);
     }
+
+    public static int getArchiveSize() {
+        return MemoryDatabase.getArchiveSize();
+    }
 }

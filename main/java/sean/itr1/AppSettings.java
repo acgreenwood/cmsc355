@@ -13,17 +13,16 @@ public class AppSettings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_archive_page);
+        setContentView(R.layout.activity_app_settings);
 
         returnHomeFromSettings = (Button)findViewById(R.id.returnHome2);  //"Return Home" button.
-        notificationSettings = (Button)findViewById(R.id.notificationSettings);  //"Notification Settings" button.
-        appearanceSettings = (Button)findViewById(R.id.notificationSettings);  //"Appearance Settings" button.
+        notificationSettings = (Button)findViewById(R.id.notifications_button);  //"Notification Settings" button.
+        appearanceSettings = (Button)findViewById(R.id.appearance_button);  //"Appearance Settings" button.
     }
 
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome2){
-            Intent settingsToHome = new Intent(this, HomePage.class);
-            startActivity(settingsToHome);    //Returns user back to the Home Page
+            finish(); //returns to last page
         }
 
         else if (choice.getId() == R.id.notifications_button){
