@@ -40,7 +40,7 @@ public class SearchPage extends AppCompatActivity {
             else {
                 Intent search = new Intent(this, ListDisplay.class);
                 //search.putExtra("Search Results", SeriesArchiveAPI.searchByTerms(searchTerms.getText().toString())); //this string may need to be changed
-                search.putExtra("Search Terms", searchTerms.getText().toString()); // testing purposes
+                search.putExtra("SEARCH_TERMS", searchTerms.getText().toString()); // testing purposes
                 startActivity(search);
             }
         }

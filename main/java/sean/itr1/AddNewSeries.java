@@ -21,9 +21,9 @@ public class AddNewSeries extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_series);
         addSeries = (Button)findViewById(R.id.confirm_addition_button);            //Confirm button to add series into app database
         cancelAddition = (Button)findViewById(R.id.decline_addition_button);       //Returns user to MainActivity window
-        seriesName = (EditText)findViewById(R.id.series_name);
-        seriesType = (EditText)findViewById(R.id.series_type);
-        seriesGenre = (EditText)findViewById(R.id.series_genre);
+        seriesName = (EditText)findViewById(R.id.series_name_edit_text);
+        seriesType = (EditText)findViewById(R.id.series_type_edit_text);
+        seriesGenre = (EditText)findViewById(R.id.series_genre_edit_text);
     }
 
     public void onClick(View choice){

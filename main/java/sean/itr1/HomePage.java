@@ -17,7 +17,7 @@ public class HomePage extends AppCompatActivity {
 
         search = (Button)findViewById(R.id.home_search_button);        //"Search" button
         myArchive = (Button)findViewById(R.id.my_archive_button);         //"Add A New Series" button.
-        settings = (Button)findViewById(R.id.settings_button);    //"App Settings" button.
+        settings = (Button)findViewById(R.id.app_settings_button);    //"App Settings" button.
         profile = (Button)findViewById(R.id.profile_button);      //"Profile" button
     }
 
@@ -32,7 +32,7 @@ public class HomePage extends AppCompatActivity {
             startActivity(createNewSeries);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
         }
 
-        else if (choice.getId() == R.id.settings_button){
+        else if (choice.getId() == R.id.app_settings_button){
             Intent returnHome = new Intent(this, AppSettings.class);
             startActivity(returnHome);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
         }

@@ -85,10 +85,12 @@ public class MemoryDatabase {
         return findings;
     }
 
-
-
     public static void addSeries(Series new_series) {
         new_series.setID(archive.size());
         archive.add(new_series);
+    }
+
+    public static int getArchiveSize() {
+        return archive.size();
     }
 }
