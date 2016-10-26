@@ -47,6 +47,7 @@ public class SearchPageTests {
     public void searchTheArchive() {
         Intents.init();
         onView(withId(R.id.search_show_title)).perform(typeText(""));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.search_confirm_basic)).perform(click());
         intended(hasComponent(ListDisplay.class.getName()));
         onView(withId(R.id.show_list)).check(matches(isDisplayed())); //checking to see if we are at ListDisplay
@@ -73,6 +74,7 @@ public class SearchPageTests {
         onView(withId(R.id.add_new_series_button)).perform(click());
         onView(withId(R.id.add_series_to_database)).perform(click());
         onView(withId(R.id.search_show_title)).perform(typeText(""));
+        Espresso.closeSoftKeyboard();
 
         onView(withId(R.id.search_confirm_basic)).perform(click());
 
@@ -85,6 +87,7 @@ public class SearchPageTests {
         onView(withId(R.id.add_new_series_button)).perform(click());
         onView(withId(R.id.add_series_to_database)).perform(click());
         onView(withId(R.id.search_show_title)).perform(typeText("asdfjkl;qweruiop"));
+        Espresso.closeSoftKeyboard();
 
         Intents.init();
         onView(withId(R.id.search_confirm_basic)).perform(click());

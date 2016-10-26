@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 
+import android.support.test.espresso.Espresso;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -30,8 +31,11 @@ public class AddSeriesTest {
     public void addSeriesToDatabase() {
         int archiveSize = SeriesArchiveAPI.getArchiveSize();
         onView(withId(R.id.series_name_edit_text)).perform(typeText("qwertyui"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.series_type_edit_text)).perform(typeText("movie"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.series_genre_edit_text)).perform(typeText("action"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.add_series_to_database)).perform(click());
         assertEquals(SeriesArchiveAPI.getArchiveSize(), archiveSize + 1); //check to see if archive grew in size
         assert(SeriesArchiveAPI.searchByTerms("qwertyui").length >= 1); // check to see if searching for the title returns at least one result
