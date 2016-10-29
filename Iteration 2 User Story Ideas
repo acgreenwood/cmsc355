@@ -1,0 +1,7 @@
+This file will be used for us to plan out what user stories to use for the second iteration. Again, we only need to focus on 3 user stories like in the last iteration
+
+Patrick's ideas:
+-Bookmark a series into the user's database
+-Access the user's archive and mark a series as "Put on Hold", or remove a series from their archive
+-Access the bookmarked series and be able to return to the last point of the story reached before holding
+-Sort the user's archive according to their preferences 
