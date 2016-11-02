@@ -22,23 +22,13 @@
         android:textSize="36sp" />
 
     <Button
-        android:text="@string/searchOption"
+        android:text="@string/profileOption"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/home_search_button"
+        android:id="@+id/profile_button"
         android:onClick="onClick"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="@string/myArchiveOption"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/my_archive_button"
-        android:onClick="onClick"
-        android:layout_below="@+id/home_search_button"
-        android:layout_alignLeft="@+id/home_search_button"
-        android:layout_alignStart="@+id/home_search_button" />
+        android:layout_below="@+id/app_settings_button"
+        android:layout_alignStart="@+id/app_settings_button" />
 
     <Button
         android:text="@string/settingsOption"
@@ -47,17 +37,34 @@
         android:id="@+id/app_settings_button"
         android:onClick="onClick"
         android:layout_below="@+id/my_archive_button"
-        android:layout_alignLeft="@+id/my_archive_button"
-        android:layout_alignStart="@+id/my_archive_button" />
+        android:layout_alignStart="@+id/database_button" />
 
     <Button
-        android:text="@string/profileOption"
+        android:text="@string/myArchiveOption"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/profile_button"
+        android:id="@+id/my_archive_button"
         android:onClick="onClick"
-        android:layout_below="@+id/app_settings_button"
-        android:layout_alignLeft="@+id/app_settings_button"
-        android:layout_alignStart="@+id/app_settings_button" />
+        android:layout_alignStart="@+id/app_settings_button"
+        android:layout_below="@+id/database_button" />
+
+    <Button
+        android:text="@string/searchOption"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_search_button"
+        android:onClick="onClick"
+        android:layout_below="@+id/homepageHeader"
+        android:layout_alignStart="@+id/database_button"
+        android:layout_marginTop="51dp" />
+
+    <Button
+        android:text="@string/series_database_list"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/database_button"
+        android:layout_below="@+id/home_search_button"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick" />
 
 </RelativeLayout>
