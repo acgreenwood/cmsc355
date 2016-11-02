@@ -2,7 +2,7 @@
 # APP NAME: SEAN
 
 #READ THiS:
-To import our project using Android Studio, use the open existing project option. Open the folder titled "FULL PROJECT", that exists within our repository. This folder contains all the correct files and correct file structure for Android Studio.
+#To import our project using Android Studio, use the open existing project option. Open the folder titled "FULL PROJECT", that exists within our repository. This folder contains all the correct files and correct file structure for Android Studio.
 
 On October 6th, the MainActivity, NoSuchShowExists, and AddNewSeries java and XML files were uploaded into the github repository. Difficulties uploading the files were encountered early on but quickly resolved after fixing up the string files in one of the xml files. One day later a WIP of the app's database (in the form of a temporary ArrayList) was uploaded, with work being done to it in the following days after the upload. 
 
