@@ -40,18 +40,18 @@ public class HomePage extends AppCompatActivity {
         }
 
         else if (choice.getId() == R.id.my_archive_button){
-            Intent createNewSeries = new Intent(this, MyArchivePage.class);
-            startActivity(createNewSeries);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
+            Intent myArchive = new Intent(this, MyArchivePage.class);
+            startActivity(myArchive);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
         }
 
         else if (choice.getId() == R.id.app_settings_button){
-            Intent returnHome = new Intent(this, AppSettings.class);
-            startActivity(returnHome);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
+            Intent appSettings = new Intent(this, AppSettings.class);
+            startActivity(appSettings);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
         }
 
         else if (choice.getId() == R.id.profile_button){
-            Intent returnHome = new Intent(this, MyProfile.class);
-            startActivity(returnHome);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
+            Intent myProfile = new Intent(this, MyProfile.class);
+            startActivity(myProfile);    //If selected, brings user to the series creation screen (specified as activity_add_new_series.xml/AddNewSeries.class).
         }
     }
 }
