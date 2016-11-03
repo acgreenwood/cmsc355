@@ -9,19 +9,24 @@ import android.view.View;
 
 public class MyArchivePage extends AppCompatActivity {
 
-    Button returnHomeFromMyArchive;
+    Button backOutFromMyArchive, myArchiveSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_archive_page);
 
-        returnHomeFromMyArchive = (Button)findViewById(R.id.returnHome1);
+        backOutFromMyArchive = (Button)findViewById(R.id.back_button_my_archive);
+        myArchiveSettings = (Button)findViewById(R.id.my_archive_settings);
     }
 
     public void onClick(View choice){
-        if (choice.getId() == R.id.returnHome1){
-            finish(); // goes back to last page
+        if (choice.getId() == R.id.back_button_my_archive){
+            finish();
+        }
+        else if (choice.getId() == R.id.my_archive_settings){
+            Intent archiveUserSettings = new Intent(this, AppSettings.class);
+            startActivity(archiveUserSettings);
         }
     }
 }
