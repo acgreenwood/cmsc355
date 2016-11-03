@@ -1,42 +1,67 @@
-package sean.itr1;
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_app_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="sean.itr1.AppSettings">
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+    <TextView
+        android:text="@string/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/settings_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-public class AppSettings extends AppCompatActivity {
+    <Button
+        android:text="@string/appearance_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/appearance_button"
+        android:onClick="onClick"
+        android:layout_below="@+id/notifications_button"
+        android:layout_alignStart="@+id/notifications_button" />
 
-    Button returnHomeFromSettings, notificationSettings, appearanceSettings, myArchiveSettings;
+    <Button
+        android:text="@string/notification_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/notifications_button"
+        android:onClick="onClick"
+        android:layout_below="@+id/my_archive_settings"
+        android:layout_alignStart="@+id/my_archive_settings" />
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_settings);
+    <Button
+        android:text="@string/go_to_my_profile"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appearance_button"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/my_profile_button"
+        android:onClick="onClick" />
 
-        returnHomeFromSettings = (Button)findViewById(R.id.returnHome2);  //"Return Home" button.
-        notificationSettings = (Button)findViewById(R.id.notifications_button);  //"Notification Settings" button.
-        appearanceSettings = (Button)findViewById(R.id.appearance_button);  //"Appearance Settings" button.
-    }
+    <Button
+        android:text="@string/return_to_home_page"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_profile_button"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/return_to_home_page"
+        android:onClick="onClick" />
 
-    public void onClick(View choice){
-        if (choice.getId() == R.id.returnHome2){
-            finish(); //returns to last page
-        }
-        
-        else if (choice.getId() == R.id.my_archive_settings){
-            //Add required code here.
-        }
-
-        else if (choice.getId() == R.id.notifications_button){
-            Intent notificationsSettings = new Intent(this, NotificationSettings.class);
-            startActivity(notificationsSettings);    //If selected, brings user to the notifications settings screen (specified as activity_notification_settings.xml/NotificationSettings.class).
-        }
-
-        else if (choice.getId() == R.id.appearance_button){
-            Intent appearanceSettings = new Intent(this, AppearanceSettings.class);
-            startActivity(appearanceSettings);    //If selected, brings user to the appearance settings screen (specified as activity_appearance_settings.xml/AppearanceSettings.class).
-        }
-    }
-}
+    <Button
+        android:text="@string/my_archive_settings"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_archive_settings"
+        android:onClick="onClick"
+        android:layout_marginTop="106dp"
+        android:layout_below="@+id/settings_title"
+        android:layout_alignStart="@+id/my_profile_button" />
+</RelativeLayout>
