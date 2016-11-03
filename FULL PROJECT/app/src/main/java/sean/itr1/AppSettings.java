@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class AppSettings extends AppCompatActivity {
 
-    Button returnHomeFromSettings, notificationSettings, appearanceSettings;
+    Button returnHomeFromSettings, notificationSettings, appearanceSettings, myArchiveSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,10 @@ public class AppSettings extends AppCompatActivity {
     public void onClick(View choice){
         if (choice.getId() == R.id.returnHome2){
             finish(); //returns to last page
+        }
+        
+        else if (choice.getId() == R.id.my_archive_settings){
+            //Add required code here.
         }
 
         else if (choice.getId() == R.id.notifications_button){
