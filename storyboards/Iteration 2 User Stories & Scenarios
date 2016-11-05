@@ -1,0 +1,68 @@
+User Story 1:
+As an avid movie goer who likes to keep track of what movies I have watched.
+So that I can keep track of the movies I've watched or will watch,
+I want to be able to create a personal list that contains all the movies I have watched or will watch.
+
+-Scenario 1: 
+ Given that I want to keep track of all the movies that I watched.
+ When I search for the name of the movie I watched, either from the database list or from the search page
+ or when I want to add a movie I recently put onto the database
+ then I should be able to add the movie into my personal archive with a simple press of a button.
+-Scenario 2:
+ Given that I want to remove a movie from my list that I did not enjoy at all or mistakenly added.
+ When I search for the movie I added in my personal database
+ and I select the name of the movie in question
+ I want to be able to remove the movie from the list with a simple push of a button through the app.
+ Then the app will automatically remove the movie in question from the list
+-Scenario 3: 
+ Given that I want to have my movies in my personal list arranged in descending alphabetical order.
+ When I access my personal archive in the app
+ and I go to my archive settings through my personal archive page
+ Then I should be able to have an option to select how I want to sort out my shows in a particular way.
+ Then the app should rearrange the appearance of my personal list based on what sorting option I saved from the app settings.
+
+User Story 2:
+As a person who does not have a lot of time on their hands to be able to follow a series closely
+So that I can keep track of where I was whenever I stop to handle things going on with my life,
+I want to be able to add a show on my own personal list and bookmark it to follow through for later when I have free time.
+
+ -Scenario 1: 
+ Given that I want put a series into my list that I want to put on hold
+ When I search for the name of the series I'm currently working on, either from the database or search pages,
+ Then I should be able to press a button that lets me bookmark that series into my personal database
+-Scenario 2:
+ Given that I want remember my place on a series I have decided to put on hold.
+ When I access my archive page, and I select a series I wish to put on hold,
+ and I push on a button to mark the show as watch for later
+ Then I should be able to access the page that allows me to remember my place on the series I'm putting on hold
+ whether it'd be chapter and page number, season and episode number of a tv series, or even a timestamp on a movie
+ Then the app should be able to mark the show I decided to put on hold, 
+ and be able to display what variables I entered for my stopping place.
+-Scenario 3: 
+ Given that I want to return to a series that I put on hold.
+ When I search for the series on my personal archive,
+ and I press on the name of the series that I put on hold.
+ Then the app should take me to a screen displaying the name, showtype, and genre of the series
+ as well as a mark indicating that I put a series on hold.
+ Then I should be able to see variables pertaining to the stopping point I entered when I first added a series into the app.
+
+User Story 3:
+As someone who likes to keep lists organized in a neat and orderly manner.
+So that I can choose how to sort my list appearance in the app,
+I want to be able to rearrange my personal archive to display my saved series in a particular order.
+ 
+ -Scenario 1:
+ Given that I want to sort my personal list in alphabetical order
+ When I access my archive settings either from the user settings or my archive pages.
+ I should be able to select an option that lets me sort my list in ascending or descending alphabetical order
+ Then the app, once I save my changes, should be able to change the order of the list accordingly.
+ -Scenario 2:
+ Given that I want to sort my personal list according to the type (TV, movie, book, anime, etc.)
+ When I access my archive settings, either from the user settings or my archive pages.
+ I should be able to select an option that lets me sort my list based on the type the series is shown.
+ Then the app, once I save my changes, should be able to change the order of the list accordingly.
+ -Scenario 3:
+ Given that I want to sort my personal list based on the genre of the series
+ When I access my archive settings either from the user settings or my archive pages.
+ I should be able to select an option that lets me sort my list based on the genre type of each series
+ Then the app, once I save my changes, should be able to change the order of the list accordingly.
