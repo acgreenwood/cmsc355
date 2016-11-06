@@ -68,4 +68,6 @@
     <string name="clear_list_text">Clear My Archive List</string>
     <string name="save_changes_text">Save Changes</string>
     <string name="display_sorting_id_text">Display Sorting ID?</string>
+    <string name="back_button_appearance">Go Back</string>
+    <string name="cancel_changes_text">Cancel Changes</string>
 </resources>
