@@ -38,7 +38,7 @@ public class SearchPage extends AppCompatActivity {
                 startActivity(search);    //If selected, app searches its database for the series name. Currently no form of database exists, so it should bring users to the NoShowExistsWindow xml.
             }
             else {
-                Intent search = new Intent(this, ListDisplay2.class);
+                Intent search = new Intent(this, ListDisplay.class);
                 //search.putExtra("Search Results", SeriesArchiveAPI.searchByTerms(searchTerms.getText().toString())); //this string may need to be changed
                 search.putExtra("SEARCH_TERMS", searchTerms.getText().toString()); // testing purposes
                 startActivity(search);

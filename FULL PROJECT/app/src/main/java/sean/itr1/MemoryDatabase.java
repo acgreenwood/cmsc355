@@ -2,11 +2,9 @@ package sean.itr1;
 
 import java.util.ArrayList;
 
-/**
- * Created by northwind on 10/9/2016.
- */
 public class MemoryDatabase {
-    private static ArrayList<Series> archive = new ArrayList<Series>();
+
+    private static ArrayList<Series> archive = new ArrayList<>();
 
     public static ArrayList<Series> getArchive() {
         return archive;
@@ -29,9 +27,9 @@ public class MemoryDatabase {
      * @param id integer id
      * @return series with id, or null if not found
      */
-    public static Series getSeriesByID(int id) {
-        for(Series element: archive) {
-            if(element.getID() == id) {
+    public static Series getSeriesById(int id) {
+        for (Series element: archive) {
+            if (element.getID() == id) {
                 return element;
             }
         }
@@ -40,18 +38,15 @@ public class MemoryDatabase {
 
     /**
      * returns arraylist of series, with most relavent searches last
-     * @param terms
-     * @return
      */
-    /** THIS NEEDS TO BE TESTED **/
     public static ArrayList<Series> searchByTerms(String terms) {
-        ArrayList<Series> findings = new ArrayList<Series>();
+        ArrayList<Series> findings = new ArrayList<>();
 
         //separate each search term into termTokens
         String[] termTokens = terms.split(" ");
 
         //search for titles containing at least one search term
-        for(Series element: archive) {
+        for (Series element: archive) {
             for (int i = 0; i < termTokens.length; i++) {
                 if (element.getTitle().toLowerCase().contains(termTokens[i].toLowerCase())) {
                     findings.add(element);
@@ -66,7 +61,8 @@ public class MemoryDatabase {
             for (int k = 0; k < findings.size(); k++) {
                 int termsFound = 0;
                 for (int i = 0; i < termTokens.length; i++) {
-                    if (findings.get(k).getTitle().toLowerCase().contains(termTokens[i].toLowerCase())) {
+                    if (findings.get(k).getTitle().toLowerCase()
+                            .contains(termTokens[i].toLowerCase())) {
                         termsFound++;
                     }
                     if (termsFound >= j) {
@@ -78,7 +74,7 @@ public class MemoryDatabase {
 
         //search for titles with all terms in order together
         for (int k = 0; k < findings.size(); k++) {
-            if( findings.get(k).getTitle().toLowerCase().contains(terms.toLowerCase())) {
+            if ( findings.get(k).getTitle().toLowerCase().contains(terms.toLowerCase())) {
                 findings.add(findings.remove(k));
             }
         }
@@ -86,9 +82,9 @@ public class MemoryDatabase {
         return findings;
     }
 
-    public static void addSeries(Series new_series) {
-        new_series.setID(archive.size());
-        archive.add(new_series);
+    public static void addSeries(Series seriestToAdd) {
+        seriestToAdd.setID(archive.size());
+        archive.add(seriestToAdd);
     }
 
     public static int getArchiveSize() {

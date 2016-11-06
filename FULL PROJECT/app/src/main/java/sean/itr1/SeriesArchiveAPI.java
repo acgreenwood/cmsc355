@@ -1,7 +1,5 @@
 package sean.itr1;
 
-import java.util.ArrayList;
-
 /**
  * Created by northwind on 10/6/2016.
  */
@@ -24,7 +22,7 @@ public class SeriesArchiveAPI {
 
     public static Series getSeriesByID(int id) {
         /** TODO this only accesses MemoryDatabase, temp memory*/
-        return MemoryDatabase.getSeriesByID( id );
+        return MemoryDatabase.getSeriesById( id );
     }
 
     public static void addSeries(Series new_series) {
