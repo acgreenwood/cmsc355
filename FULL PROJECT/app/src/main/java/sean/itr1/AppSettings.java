@@ -43,7 +43,8 @@ public class AppSettings extends AppCompatActivity {
             startActivity(appearanceSettings);    //If selected, brings user to the appearance settings screen (specified as activity_appearance_settings.xml/AppearanceSettings.class).
         }
         else if(choice.getId() == R.id.return_to_home_page){
-            finish();
+            Intent homePage = new Intent(this, HomePage.class);
+            startActivity(homePage);
         }
     }
 }
