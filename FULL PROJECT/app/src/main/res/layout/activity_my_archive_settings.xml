@@ -74,4 +74,11 @@
         android:id="@+id/save_changes_button"
         android:onClick="onClick" />
 
+    <Button
+        android:text="@string/cancel_changes_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancel_changes_button"
+        android:onClick="onClick" />
+
 </LinearLayout>
