@@ -1,9 +1,6 @@
 package sean.itr1;
 
-/**
- * Created by northwind on 10/6/2016.
- */
-public class SeriesArchiveAPI {
+public class SeriesArchiveApi {
 
     /**
      * Search through the database
@@ -20,13 +17,13 @@ public class SeriesArchiveAPI {
         return MemoryDatabase.getArchive().toArray(new Series[] {});
     }
 
-    public static Series getSeriesByID(int id) {
+    public static Series getSeriesById(int id) {
         /** TODO this only accesses MemoryDatabase, temp memory*/
         return MemoryDatabase.getSeriesById( id );
     }
 
-    public static void addSeries(Series new_series) {
-        MemoryDatabase.addSeries(new_series);
+    public static void addSeries(Series newSeries) {
+        MemoryDatabase.addSeries(newSeries);
     }
 
     public static int getArchiveSize() {

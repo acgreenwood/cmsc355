@@ -31,7 +31,7 @@ public class AddNewSeries extends AppCompatActivity {
 
     public void onClick(View choice) {
         if (choice.getId() == R.id.add_series_to_database) {
-            SeriesArchiveAPI.addSeries(new Series(0, seriesName.getText().toString(),
+            SeriesArchiveApi.addSeries(new Series(0, seriesName.getText().toString(),
                     seriesType.getText().toString(), seriesGenre.getText().toString()));
             finish();
         } else if (choice.getId() == R.id.cancel_action) {

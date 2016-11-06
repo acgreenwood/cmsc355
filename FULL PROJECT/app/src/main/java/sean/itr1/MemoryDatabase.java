@@ -29,7 +29,7 @@ public class MemoryDatabase {
      */
     public static Series getSeriesById(int id) {
         for (Series element: archive) {
-            if (element.getID() == id) {
+            if (element.getId() == id) {
                 return element;
             }
         }
@@ -83,7 +83,7 @@ public class MemoryDatabase {
     }
 
     public static void addSeries(Series seriestToAdd) {
-        seriestToAdd.setID(archive.size());
+        seriestToAdd.setId(archive.size());
         archive.add(seriestToAdd);
     }
 

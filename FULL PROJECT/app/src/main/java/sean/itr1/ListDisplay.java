@@ -17,7 +17,7 @@ public class ListDisplay extends Activity {
         setContentView(R.layout.activity_list_display);
 
         listView = (ListView) findViewById(R.id.show_list);
-        Series[] series = SeriesArchiveAPI
+        Series[] series = SeriesArchiveApi
                 .searchByTerms(getIntent().getExtras().getString("SEARCH_TERMS"));
 
         showArray = new String[series.length];

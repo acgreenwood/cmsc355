@@ -1,55 +1,54 @@
 package sean.itr1;
 
-/**
- * Created by northwind on 10/6/2016.
- */
 public class Series {
 
     /** Use these enums later */
-    public static enum SERIES_TYPE {
+    public static enum SeriesType {
         TELEVISION, MOVIE, ANIME, BOOK
     }
-    public static enum SERIES_GENRE {
+
+    public static enum SeriesGenre {
         ACTION, MYSTERY, ROMANCE, COMEDY, HORROR
     }
 
-    private int series_id;
-    private String series_title;
-    private String series_type;
-    private String series_genre;
-    private String series_description;
+    private int seriesId;
+    private String seriesTitle;
+    private String seriesType;
+    private String seriesGenre;
+    private String seriesDescription;
 
     public Series(int id, String title, String type, String genre) {
-        series_id = id;
-        series_title = title;
-        series_type = type;
-        series_genre = genre;
+        seriesId = id;
+        seriesTitle = title;
+        seriesType = type;
+        seriesGenre = genre;
     }
 
     public String getTitle() {
-        return series_title;
+        return seriesTitle;
     }
 
     public String getType() {
-        return series_type;
+        return seriesType;
     }
 
     public String getGenre() {
-        return series_genre;
+        return seriesGenre;
     }
 
     public String getDescription() {
-        return series_description;
+        return seriesDescription;
     }
 
-    public int getID() {
-        return series_id;
+    public int getId() {
+        return seriesId;
     }
 
-    public void setID(int id) {
-        series_id = id;
+    public void setId(int id) {
+        seriesId = id;
     }
+
     public void setDescription(String description) {
-        series_description = description;
+        seriesDescription = description;
     }
 }

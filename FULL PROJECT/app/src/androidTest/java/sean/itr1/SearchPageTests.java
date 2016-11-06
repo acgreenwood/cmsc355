@@ -5,7 +5,6 @@ package sean.itr1;
  */
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -78,7 +77,7 @@ public class SearchPageTests {
 
         onView(withId(R.id.search_confirm_basic)).perform(click());
 
-        onView(withId(R.id.show_list)).check(matches(withSize(SeriesArchiveAPI.getArchiveSize()))); //checking to see if size of list matches size of archive
+        onView(withId(R.id.show_list)).check(matches(withSize(SeriesArchiveApi.getArchiveSize()))); //checking to see if size of list matches size of archive
     }
 
     //Issue: Search the SEAN archive: Scenario 4
