@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 
-public class MyArchivePage extends AppCompatActivity {
+public class MyArchivePage extends AppCompatActivity{
 
     Button backOutFromMyArchive, myArchiveSettings;
 
@@ -22,10 +22,11 @@ public class MyArchivePage extends AppCompatActivity {
 
     public void onClick(View choice){
         if (choice.getId() == R.id.back_button_my_archive){
-            finish();
+            Intent home = new Intent(this, HomePage.class);
+            startActivity(home);
         }
         else if (choice.getId() == R.id.my_archive_settings){
-            Intent archiveUserSettings = new Intent(this, AppSettings.class);
+            Intent archiveUserSettings = new Intent(this, MyArchiveSettings.class);
             startActivity(archiveUserSettings);
         }
     }
