@@ -21,9 +21,10 @@
         <activity android:name=".MyArchivePage" />
         <activity android:name=".AppSettings" />
         <activity android:name=".MyProfile" />
-        <activity android:name=".ListDisplay" />
+        <activity android:name=".ListDisplay2" />
         <activity android:name=".NotificationSettings" />
         <activity android:name=".AppearanceSettings" />
+        <activity android:name=".MyArchiveSettings" />
     </application>
 
 </manifest>

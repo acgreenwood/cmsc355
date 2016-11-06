@@ -30,6 +30,7 @@ public class AddNewSeries extends AppCompatActivity {
         if (choice.getId() == R.id.add_series_to_database){
             SeriesArchiveAPI.addSeries(new Series(0, seriesName.getText().toString(), seriesType.getText().toString(), seriesGenre.getText().toString()));
             finish(); //If selected, adds series into the app database (not yet implemented atm: DO NOT CLICK UNTIL IT IS IMPLEMENTED INTO THE APP CODE).
+            //No harm in clicking it, just adds it to the list until the app is closed?
         }
 
         else if (choice.getId() == R.id.cancel_action){

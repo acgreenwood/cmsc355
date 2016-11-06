@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class ListDisplay extends Activity {
+public class ListDisplay2 extends Activity {
     // Array of shows
     String[] showArray; //= {...};
     ListView listView;

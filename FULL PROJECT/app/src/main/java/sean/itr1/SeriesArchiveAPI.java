@@ -18,12 +18,12 @@ public class SeriesArchiveAPI {
 
     /** dangerous once the archive becomes big **/
     public static Series[] getArchive() {
-        /** TODO this only accesses MemoryDatase, temp memory*/
+        /** TODO this only accesses MemoryDatabase, temp memory*/
         return MemoryDatabase.getArchive().toArray(new Series[] {});
     }
 
     public static Series getSeriesByID(int id) {
-        /** TODO this only accesses MemoryDatase, temp memory*/
+        /** TODO this only accesses MemoryDatabase, temp memory*/
         return MemoryDatabase.getSeriesByID( id );
     }
 

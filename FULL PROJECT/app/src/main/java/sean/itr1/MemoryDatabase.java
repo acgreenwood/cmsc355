@@ -18,9 +18,10 @@ public class MemoryDatabase {
         archive.add(new Series(2, "Harry Potter", "book", "fantasy"));
         archive.add(new Series(3, "Silence of the Lambs", "movie", "thriller"));
         archive.add(new Series(4, "Attack On Titan", "anime", "action"));
-        archive.add(new Series(5, "The Office", "television", "comedcy"));
+        archive.add(new Series(5, "The Office", "television", "comedy"));
         archive.add(new Series(6, "The New Boston's Android Tutorials", "internet", "academic"));
         archive.add(new Series(7, "SpongeBob SquarePants", "anime", "romance"));
+        archive.add(new Series(8, "Cory in the House", "anime", "comedy"));
     }
 
     /**

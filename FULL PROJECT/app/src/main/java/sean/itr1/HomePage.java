@@ -30,12 +30,15 @@ public class HomePage extends AppCompatActivity {
         }
 
         else if (choice.getId() == R.id.database_button){
-            Intent database = new Intent(this, ListDisplay.class);
+            Intent database = new Intent(this, ListDisplay2.class);
+            database.putExtra("SEARCH_TERMS", ""); //is this okay or does it need to change -- adding this line made it stop crashing
             startActivity(database);
             
             /*
              * Note: This button currently does not work at the moment, and WILL crash the app if pressed. 
              * Look into getting that fixed after changes to ListDisplay are done.
+             *
+             * Update: it works now -- Andrew
              */
         }
 
