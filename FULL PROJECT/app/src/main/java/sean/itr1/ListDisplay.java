@@ -41,7 +41,6 @@ public class ListDisplay extends Activity implements OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        System.out.println("You clicked Item:  " + id + " at position:" + position);
         Intent intent = new Intent(this, ShowInfo.class);
         Series s = series[position];
         intent.putExtra("id", s.getId());
