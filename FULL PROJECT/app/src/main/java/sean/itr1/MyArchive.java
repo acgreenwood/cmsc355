@@ -6,6 +6,13 @@ public class MyArchive {
 
     private static ArrayList<Integer> personalArchive = new ArrayList<Integer>();
 
+    static {
+        personalArchive.add(1);
+        personalArchive.add(3);
+        personalArchive.add(5);
+        personalArchive.add(7);
+    }
+
     public static void addSeries(Series seriesToAdd) {
         addSeriesById(seriesToAdd.getId());
     }
