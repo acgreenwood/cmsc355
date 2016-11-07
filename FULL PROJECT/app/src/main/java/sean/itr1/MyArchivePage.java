@@ -24,6 +24,7 @@ public class MyArchivePage extends AppCompatActivity {
         myArchiveSettings = (Button)findViewById(R.id.my_archive_settings);
         myArchiveListView = (ListView) findViewById(R.id.my_archive_list);
 
+        Series[] series = MyArchive.getMyArchive();
 
         archiveArray = new String[series.length];
         for (int i = 0; i < series.length; i++) {

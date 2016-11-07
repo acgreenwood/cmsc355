@@ -18,7 +18,7 @@ import static android.support.test.espresso.intent.Intents.intended;
  * Created by northwind on 10/10/2016.
  */
 @RunWith(AndroidJUnit4.class)
-public class AddSeriesTest {
+public class AddSeriesToDatabaseTest {
     @Rule
     public ActivityTestRule<AddNewSeries> AddSeriesActvityTestRule = new ActivityTestRule<AddNewSeries>(AddNewSeries.class);
 
