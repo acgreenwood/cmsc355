@@ -33,8 +33,8 @@ public class MyArchivePage extends AppCompatActivity {
                     + "\nGenre: " + series[i].getGenre() + "\n";
         }
 
-        ArrayAdapter adapter
-                = new ArrayAdapter<>(this, R.layout.activity_listview, archiveArray);
+        ArrayAdapter adapter =
+                new ArrayAdapter<>(this, R.layout.activity_listview, archiveArray);
 
         myArchiveListView.setAdapter(adapter);
     }

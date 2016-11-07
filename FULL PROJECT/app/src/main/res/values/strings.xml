@@ -70,4 +70,5 @@
     <string name="display_sorting_id_text">Display Sorting ID?</string>
     <string name="back_button_appearance">Go Back</string>
     <string name="cancel_changes_text">Cancel Changes</string>
+    <string name="add_series_to_archive">Add to Archive</string>
 </resources>

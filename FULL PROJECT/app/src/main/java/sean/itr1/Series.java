@@ -4,11 +4,11 @@ public class Series {
 
     /** Use these enums later */
     public static enum SeriesType {
-        TELEVISION, MOVIE, ANIME, BOOK
+        TELEVISION, MOVIE, ANIME, BOOK, INTERNET
     }
 
     public static enum SeriesGenre {
-        ACTION, MYSTERY, ROMANCE, COMEDY, HORROR
+        ACTION, MYSTERY, ROMANCE, COMEDY, HORROR, DRAMA
     }
 
     private int seriesId;

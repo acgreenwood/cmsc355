@@ -25,6 +25,7 @@
         <activity android:name=".NotificationSettings" />
         <activity android:name=".AppearanceSettings" />
         <activity android:name=".MyArchiveSettings" />
+        <activity android:name=".ShowInfo" />
     </application>
 
 </manifest>

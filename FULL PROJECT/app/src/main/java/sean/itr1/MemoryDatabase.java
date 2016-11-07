@@ -11,15 +11,15 @@ public class MemoryDatabase {
     }
 
     static {
-        archive.add(new Series(0, "Stranger Things", "television", "mystery"));
-        archive.add(new Series(1, "Bob's Burgers", "television", "comedy"));
-        archive.add(new Series(2, "Harry Potter", "book", "fantasy"));
-        archive.add(new Series(3, "Silence of the Lambs", "movie", "thriller"));
-        archive.add(new Series(4, "Attack On Titan", "anime", "action"));
-        archive.add(new Series(5, "The Office", "television", "comedy"));
-        archive.add(new Series(6, "The New Boston's Android Tutorials", "internet", "academic"));
-        archive.add(new Series(7, "SpongeBob SquarePants", "anime", "romance"));
-        archive.add(new Series(8, "Cory in the House", "anime", "comedy"));
+        archive.add(new Series(0, "Stranger Things", "Television", "Mystery"));
+        archive.add(new Series(1, "Bob's Burgers", "Television", "Comedy"));
+        archive.add(new Series(2, "Harry Potter", "Book", "Fantasy"));
+        archive.add(new Series(3, "Silence of the Lambs", "Movie", "Thriller"));
+        archive.add(new Series(4, "Attack On Titan", "Anime", "Action"));
+        archive.add(new Series(5, "The Office", "Television", "Comedy"));
+        archive.add(new Series(6, "The New Boston's Android Tutorials", "Internet", "Academic"));
+        archive.add(new Series(7, "SpongeBob SquarePants", "Anime", "Romance"));
+        archive.add(new Series(8, "Cory in the House", "Anime", "Comedy"));
     }
 
     /**
@@ -44,6 +44,13 @@ public class MemoryDatabase {
 
         //separate each search term into termTokens
         String[] termTokens = terms.split(" ");
+
+        if(terms.isEmpty()) {
+            for(int i = 0; i < archive.size(); i++) {
+                findings.add(getSeriesById(i));
+            }
+            return findings;
+        }
 
         //search for titles containing at least one search term
         for (Series element: archive) {
@@ -82,9 +89,9 @@ public class MemoryDatabase {
         return findings;
     }
 
-    public static void addSeries(Series seriestToAdd) {
-        seriestToAdd.setId(archive.size());
-        archive.add(seriestToAdd);
+    public static void addSeries(Series seriesToAdd) {
+        seriesToAdd.setId(archive.size());
+        archive.add(seriesToAdd);
     }
 
     public static int getArchiveSize() {
