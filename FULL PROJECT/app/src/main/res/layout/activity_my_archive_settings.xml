@@ -29,7 +29,7 @@
             android:text="@string/series_title_button"
             android:checked="true"/>
         <RadioButton
-            android:id="@+id/series_type_sort"
+            android:id="@+id/type_sort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/series_type_button" />

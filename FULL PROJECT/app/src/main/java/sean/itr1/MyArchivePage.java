@@ -8,12 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class MyArchivePage extends AppCompatActivity {
 
     Button backOutFromMyArchive;
     Button myArchiveSettings;
     ListView myArchiveListView;
-    String[] archiveArray;
+    ArrayList<String> archiveArray;
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +31,21 @@ public class MyArchivePage extends AppCompatActivity {
 
         Series[] series = MyArchive.getMyArchive();
 
-        archiveArray = new String[series.length];
-        for (int i = 0; i < series.length; i++) {
-            archiveArray[i] = "Title: " + series[i].getTitle()
-                    + "\nType: " + series[i].getType()
-                    + "\nGenre: " + series[i].getGenre() + "\n";
-        }
+        archiveArray = new ArrayList<>();
+        setArchiveArray(series);
 
-        ArrayAdapter adapter =
+        adapter =
                 new ArrayAdapter<>(this, R.layout.activity_listview, archiveArray);
 
         myArchiveListView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sortArchive();
+        //archiveArray = new String[] {""};
+        adapter.notifyDataSetChanged();
     }
 
     public void onClick(View choice) {
@@ -48,6 +57,45 @@ public class MyArchivePage extends AppCompatActivity {
             startActivity(archiveUserSettings);
         } else if (choice.getId() == R.id.my_archive_list) {
             finish();
+        }
+    }
+
+    private void sortArchive() {
+
+        final MyArchiveSettings.Sort sortSetting = MyArchiveSettings.getSortSetting();
+        final MyArchiveSettings.SortOrder orderSetting = MyArchiveSettings.getOrderSetting();
+
+        Series[] series = MyArchive.getMyArchive();
+
+        Arrays.sort(series, new Comparator<Series>() {
+            @Override
+            public int compare(Series s1, Series s2) {
+                if(sortSetting == MyArchiveSettings.Sort.TITLE) {
+                    return (s1.getTitle().compareTo(s2.getTitle()));
+                } else if(sortSetting == MyArchiveSettings.Sort.TYPE) {
+                    return (s1.getType().compareTo(s2.getType()));
+                } else if(sortSetting == MyArchiveSettings.Sort.GENRE) {
+                    return (s1.getGenre().compareTo(s2.getGenre()));
+                } else return 0;
+            }
+        });
+        if(orderSetting == MyArchiveSettings.SortOrder.ASCENDING) {
+            for(int i = 0; i < series.length / 2; i++) {
+                Series temp = series[i];
+                series[i] = series[series.length - 1 - i];
+                series[series.length - 1 - i] = temp;
+            }
+        }
+
+        setArchiveArray(series);
+    }
+
+    private void setArchiveArray(Series[] series) {
+        archiveArray.clear();
+        for (int i = 0; i < series.length; i++) {
+            archiveArray.add("Title: " + series[i].getTitle()
+                    + "\nType: " + series[i].getType()
+                    + "\nGenre: " + series[i].getGenre() + "\n");
         }
     }
 }
