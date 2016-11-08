@@ -13,7 +13,7 @@ import android.widget.TextView;
  */
 
 public class ShowInfo extends AppCompatActivity {
-    Button returnToList, addToArchive;
+    Button returnToList, addToArchive, removeFromArchive;
     TextView title, type, genre;
     Series s;
 
@@ -22,11 +22,21 @@ public class ShowInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_info);
 
+        s = MemoryDatabase.getSeriesById(getIntent().getExtras().getInt("id"));
+
         returnToList = (Button) findViewById(R.id.return_to_list);
 
-        addToArchive = (Button) findViewById(R.id.add_to_archive);
+        //button changes depending on if show is in my archive or not
+        if(MyArchive.inMyArchive(s.getId())) {
+            removeFromArchive = (Button) findViewById(R.id.add_remove_archive);
+            removeFromArchive.setText("Remove from Archive");
+        }
 
-        s = MemoryDatabase.getSeriesById(getIntent().getExtras().getInt("id"));
+        else {
+            addToArchive = (Button) findViewById(R.id.add_remove_archive);
+            addToArchive.setText("Add to Archive");
+        }
+
 
         title = (TextView) findViewById(R.id.title);
         type = (TextView) findViewById(R.id.type);
@@ -43,9 +53,14 @@ public class ShowInfo extends AppCompatActivity {
         if(choice.getId() == R.id.return_to_list) {
             finish();
         }
-        if(choice.getId() == R.id.add_to_archive) {
-            MyArchive.addSeries(s);
-            //Currently have it go back to list after adding to archive
+        if(choice.getId() == R.id.add_remove_archive) {
+            if(MyArchive.inMyArchive(s.getId())) {
+                MyArchive.removeSeries(s);
+            }
+            else {
+                MyArchive.addSeries(s);
+            }
+            //Currently have it go back to list after adding to/removing from archive
             //Feel free to change this if you think it should work differently
             finish();
         }

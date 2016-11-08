@@ -58,6 +58,7 @@ public class MyArchiveSettings extends AppCompatActivity {
             } else {
                 orderSetting = SortOrder.DESCENDING;
             }
+            finish();
         }
     }
 

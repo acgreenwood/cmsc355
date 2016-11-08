@@ -45,6 +45,17 @@ public class MyArchive {
         }
     }
 
+    //added by andrew, for use in ShowInfo.java
+    public static boolean inMyArchive(int id) {
+        for (int i = 0; i < personalArchive.size(); i++) {
+            if (personalArchive.get(i) == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public static Series[] getMyArchive() {
         Series[] myArchiveArray = new Series[personalArchive.size()];
 
