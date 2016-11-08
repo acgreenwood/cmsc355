@@ -10,6 +10,12 @@ public class MyArchiveSettings extends AppCompatActivity {
     Button saveMyArchiveChanges;
     Button cancelMyArchiveChanges;
 
+    public enum Sort {
+        TITLE, TYPE, GENRE;
+    }
+
+    private static Sort sortSetting = Sort.TITLE;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

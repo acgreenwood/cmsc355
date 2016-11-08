@@ -12,11 +12,7 @@ import android.support.test.runner.AndroidJUnit4;
 import static android.support.test.espresso.Espresso.*;
 import static android.support.test.espresso.action.ViewActions.*;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
-import static android.support.test.espresso.intent.Intents.intended;
 
-/**
- * Created by northwind on 10/10/2016.
- */
 @RunWith(AndroidJUnit4.class)
 public class AddSeriesToDatabaseTest {
     @Rule
