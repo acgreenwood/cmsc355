@@ -70,9 +70,4 @@
     <string name="display_sorting_id_text">Display Sorting ID?</string>
     <string name="back_button_appearance">Go Back</string>
     <string name="cancel_changes_text">Cancel Changes</string>
-    <string name="hold_addition_message">Enter hold information:</string>
-    <string name="hold_season">Season</string>
-    <string name="hold_episode">Episode</string>
-    <string name="hold_timeStamp">Timestamp</string>
-    <string name="add_hold">Add Hold</string>
 </resources>

@@ -20,9 +20,9 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         search = (Button)findViewById(R.id.home_search_button); //"Search" button
-        database = (Button)findViewById(R.id.database_button);  //"Database" button
-        myArchive = (Button)findViewById(R.id.my_archive_button); //"Add A New Series" button
-        settings = (Button)findViewById(R.id.app_settings_button); //"App Settings" button
+        database = (Button)findViewById(R.id.database_button);
+        myArchive = (Button)findViewById(R.id.my_archive_button); //"Add A New Series" button.
+        settings = (Button)findViewById(R.id.app_settings_button); //"App Settings" button.
         profile = (Button)findViewById(R.id.profile_button); //"Profile" button
     }
 
