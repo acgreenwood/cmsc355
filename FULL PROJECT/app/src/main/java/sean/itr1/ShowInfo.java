@@ -13,17 +13,20 @@ import android.widget.TextView;
  */
 
 public class ShowInfo extends AppCompatActivity {
-    Button returnToList;
+    Button returnToList, addToArchive;
     TextView title, type, genre;
+    Series s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_info);
 
-        returnToList = (Button)findViewById(R.id.return_to_list);
+        returnToList = (Button) findViewById(R.id.return_to_list);
 
-        Series s = MemoryDatabase.getSeriesById(getIntent().getExtras().getInt("id"));
+        addToArchive = (Button) findViewById(R.id.add_to_archive);
+
+        s = MemoryDatabase.getSeriesById(getIntent().getExtras().getInt("id"));
 
         title = (TextView) findViewById(R.id.title);
         type = (TextView) findViewById(R.id.type);
@@ -38,6 +41,12 @@ public class ShowInfo extends AppCompatActivity {
 
     public void onClick(View choice) {
         if(choice.getId() == R.id.return_to_list) {
+            finish();
+        }
+        if(choice.getId() == R.id.add_to_archive) {
+            MyArchive.addSeries(s);
+            //Currently have it go back to list after adding to archive
+            //Feel free to change this if you think it should work differently
             finish();
         }
     }
