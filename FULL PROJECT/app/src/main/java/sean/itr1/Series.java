@@ -16,12 +16,14 @@ public class Series {
     private String seriesType;
     private String seriesGenre;
     private String seriesDescription;
+    private HoldStatus seriesHold;
 
     public Series(int id, String title, String type, String genre) {
         seriesId = id;
         seriesTitle = title;
         seriesType = type;
         seriesGenre = genre;
+        seriesHold = new HoldStatus();
     }
 
     public String getTitle() {
@@ -51,4 +53,8 @@ public class Series {
     public void setDescription(String description) {
         seriesDescription = description;
     }
+
+    private HoldStatus getHold(){ return seriesHold; }
+
+    private void setHold(HoldStatus aHold){ seriesHold = aHold; }
 }
