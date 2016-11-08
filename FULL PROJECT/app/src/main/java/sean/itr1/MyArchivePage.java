@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -17,6 +18,7 @@ public class MyArchivePage extends AppCompatActivity {
     Button backOutFromMyArchive;
     Button myArchiveSettings;
     ListView myArchiveListView;
+    Series[] archiveSeries;
     ArrayList<String> archiveArray;
     ArrayAdapter adapter;
 
@@ -38,6 +40,13 @@ public class MyArchivePage extends AppCompatActivity {
                 new ArrayAdapter<>(this, R.layout.activity_listview, archiveArray);
 
         myArchiveListView.setAdapter(adapter);
+
+        myArchiveListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showDetails(parent, view, position, id);
+            }
+        });
     }
 
     @Override
@@ -46,6 +55,13 @@ public class MyArchivePage extends AppCompatActivity {
         sortArchive();
         //archiveArray = new String[] {""};
         adapter.notifyDataSetChanged();
+    }
+
+    public void showDetails(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, ShowInfo.class);
+        Series s = archiveSeries[position];
+        intent.putExtra("id", s.getId());
+        startActivity(intent);
     }
 
     public void onClick(View choice) {
@@ -97,5 +113,7 @@ public class MyArchivePage extends AppCompatActivity {
                     + "\nType: " + series[i].getType()
                     + "\nGenre: " + series[i].getGenre() + "\n");
         }
+        archiveSeries = series;
     }
+
 }
