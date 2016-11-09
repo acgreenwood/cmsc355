@@ -8,13 +8,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class MyArchivePage extends AppCompatActivity implements OnItemClickListener {
+public class MyArchivePage extends AppCompatActivity {
 
     Button backOutFromMyArchive;
     Button myArchiveSettings;
@@ -26,24 +25,28 @@ public class MyArchivePage extends AppCompatActivity implements OnItemClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_my_archive_page);
 
-        backOutFromMyArchive = (Button) findViewById(R.id.back_button_my_archive);
-        myArchiveSettings = (Button) findViewById(R.id.my_archive_settings);
+        backOutFromMyArchive = (Button)findViewById(R.id.back_button_my_archive);
+        myArchiveSettings = (Button)findViewById(R.id.my_archive_settings);
         myArchiveListView = (ListView) findViewById(R.id.my_archive_list);
-        myArchiveListView.setOnItemClickListener(this);
 
-        archiveSeries = MyArchive.getMyArchive();
+        Series[] series = MyArchive.getMyArchive();
 
         archiveArray = new ArrayList<>();
-        setArchiveArray(archiveSeries);
+        setArchiveArray(series);
 
         adapter =
                 new ArrayAdapter<>(this, R.layout.activity_listview, archiveArray);
 
         myArchiveListView.setAdapter(adapter);
 
+        myArchiveListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showDetails(parent, view, position, id);
+            }
+        });
     }
 
     @Override
@@ -54,8 +57,7 @@ public class MyArchivePage extends AppCompatActivity implements OnItemClickListe
         adapter.notifyDataSetChanged();
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void showDetails(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ShowInfo.class);
         Series s = archiveSeries[position];
         intent.putExtra("id", s.getId());
