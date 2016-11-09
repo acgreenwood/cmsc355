@@ -18,7 +18,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 public class SearchTheArchiveTest {
     @Rule
-    public ActivityTestRule<SearchPage> SearchPageActvityTestRule = new ActivityTestRule<SearchPage>(SearchPage.class);
+    public ActivityTestRule<SearchPage> SearchPageActvityTestRule = new ActivityTestRule<>(SearchPage.class);
 
     //Issue: Search the SEAN archive: Scenario 2
     @Test
