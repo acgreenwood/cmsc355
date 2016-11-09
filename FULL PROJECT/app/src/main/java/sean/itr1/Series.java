@@ -54,9 +54,13 @@ public class Series {
         seriesDescription = description;
     }
 
-    public HoldStatus getHold(){ return seriesHold; }
+    public HoldStatus getHold() {
+        return seriesHold;
+    }
 
-    public void setHold(HoldStatus aHold){ seriesHold = aHold; }
+    public void setHold(HoldStatus theHold) {
+        seriesHold = theHold;
+    }
 
     public String toString() {
         return "Title: " + getTitle()
