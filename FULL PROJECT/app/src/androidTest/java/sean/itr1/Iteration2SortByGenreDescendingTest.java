@@ -22,7 +22,7 @@ public class Iteration2SortByGenreDescendingTest {
     public ActivityTestRule<MyArchivePage> AddSeriesActvityTestRule = new ActivityTestRule<>(MyArchivePage.class);
 
     @Test
-    public void myArchiveSettingsCancelTest() {
+    public void sortByGenreDescendingTest() {
         onView(withId(R.id.my_archive_settings)).perform(click());
 
         onView(withId(R.id.genre_sort)).perform(click());

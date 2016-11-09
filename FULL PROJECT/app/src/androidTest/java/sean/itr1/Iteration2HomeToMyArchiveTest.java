@@ -1,5 +1,6 @@
 package sean.itr1;
 
+
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -15,19 +16,15 @@ import static android.support.test.espresso.intent.matcher.IntentMatchers.hasCom
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
-public class GoToAddSeriesPageTest {
-
+public class Iteration2HomeToMyArchiveTest {
     @Rule
-    public ActivityTestRule<HomePage> homePageActvityTestRule = new ActivityTestRule<>(HomePage.class);
+    public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
-    //Add a series: Scenario 1: go to add series page
     @Test
-    public void goToAddSeriesPage() {
+    public void homeToMyArchiveTest() {
         Intents.init();
-        onView(withId(R.id.home_search_button)).perform(click());
-        intended(hasComponent(SearchPage.class.getName()));
-        onView(withId(R.id.add_new_series_button)).perform(click());
-        intended(hasComponent(AddNewSeries.class.getName()));
+        onView(withId(R.id.my_archive_button)).perform(click());
+        intended(hasComponent(MyArchivePage.class.getName()));
         Intents.release();
     }
 }

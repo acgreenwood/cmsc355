@@ -23,7 +23,7 @@ public class Iteration2DatabaseToShowDetailsTest {
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
     @Test
-    public void myArchivePageSettingsButtonTest() {
+    public void databaseToShowDetailsTest() {
         Intents.init();
         onView(withId(R.id.database_button)).perform(click());
         intended(hasComponent(ListDisplay.class.getName()));

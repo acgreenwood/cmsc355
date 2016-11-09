@@ -51,4 +51,10 @@ public class Series {
     public void setDescription(String description) {
         seriesDescription = description;
     }
+
+    public String toString() {
+        return "Title: " + getTitle()
+                + "\nType: " + getType()
+                + "\nGenre: " + getGenre() + "\n";
+    }
 }

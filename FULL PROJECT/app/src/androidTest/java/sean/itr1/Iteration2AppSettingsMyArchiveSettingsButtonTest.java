@@ -20,7 +20,7 @@ public class Iteration2AppSettingsMyArchiveSettingsButtonTest {
     public ActivityTestRule<AppSettings> AddSeriesActvityTestRule = new ActivityTestRule<>(AppSettings.class);
 
     @Test
-    public void myArchiveSettingsButtonTest() {
+    public void appSettingsMyArchiveSettingsButtonTest() {
         Intents.init();
         onView(withId(R.id.my_archive_settings)).perform(click());
         intended(hasComponent(MyArchiveSettings.class.getName()));

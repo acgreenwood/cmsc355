@@ -22,7 +22,7 @@ public class Iteration2SortByTypeDescendingTest {
     public ActivityTestRule<MyArchivePage> AddSeriesActvityTestRule = new ActivityTestRule<>(MyArchivePage.class);
 
     @Test
-    public void myArchiveSettingsCancelTest() {
+    public void sortByTypeDescendingTest() {
         onView(withId(R.id.my_archive_settings)).perform(click());
 
         onView(withId(R.id.type_sort)).perform(click());

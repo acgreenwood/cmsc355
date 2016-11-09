@@ -24,7 +24,7 @@ public class Iteration2MyArchiveToShowDetailsTest {
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
     @Test
-    public void myArchivePageSettingsButtonTest() {
+    public void myArchiveToShowDetailsTest() {
         Intents.init();
         onView(withId(R.id.my_archive_button)).perform(click());
         intended(hasComponent(MyArchivePage.class.getName()));
