@@ -19,6 +19,7 @@ public class Iteration2AppSettingsMyArchiveSettingsButtonTest {
     @Rule
     public ActivityTestRule<AppSettings> AddSeriesActvityTestRule = new ActivityTestRule<>(AppSettings.class);
 
+    // Issue: My Archive Settings: Scenario 1
     @Test
     public void appSettingsMyArchiveSettingsButtonTest() {
         Intents.init();

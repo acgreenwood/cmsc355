@@ -21,6 +21,7 @@ public class Iteration2SearchToShowDetailsTest {
     @Rule
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
+    // Issue: See series details: Scenario 2
     @Test
     public void searchToShowDetailsTest() {
         Intents.init();

@@ -22,6 +22,7 @@ public class Iteration2SortByTitleDescendingTest {
     @Rule
     public ActivityTestRule<MyArchivePage> AddSeriesActvityTestRule = new ActivityTestRule<>(MyArchivePage.class);
 
+    // Issue: Sort My Archive: Scenario 1
     @Test
     public void sortByTitleDescendingTest() {
         onView(withId(R.id.my_archive_settings)).perform(click());

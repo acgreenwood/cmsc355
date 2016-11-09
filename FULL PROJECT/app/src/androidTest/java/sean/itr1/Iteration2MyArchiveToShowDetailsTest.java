@@ -23,6 +23,7 @@ public class Iteration2MyArchiveToShowDetailsTest {
     @Rule
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
+    // Issue: See series details: Scenario 3
     @Test
     public void myArchiveToShowDetailsTest() {
         Intents.init();

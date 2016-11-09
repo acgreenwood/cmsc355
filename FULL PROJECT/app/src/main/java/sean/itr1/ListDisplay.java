@@ -1,13 +1,13 @@
 package sean.itr1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.content.Intent;
 
 public class ListDisplay extends Activity implements OnItemClickListener {
     // Array of shows
@@ -42,8 +42,8 @@ public class ListDisplay extends Activity implements OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ShowInfo.class);
-        Series s = series[position];
-        intent.putExtra("id", s.getId());
+        Series seriesAtPos = series[position];
+        intent.putExtra("id", seriesAtPos.getId());
         startActivity(intent);
     }
 }

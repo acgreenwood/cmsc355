@@ -20,6 +20,7 @@ public class Iteration2MyArchiveSettingsCancelTest {
     @Rule
     public ActivityTestRule<AppSettings> AddSeriesActvityTestRule = new ActivityTestRule<>(AppSettings.class);
 
+    // Issue: My Archive Settings: Scenario 2
     @Test
     public void myArchiveSettingsCancelTest() {
         onView(withId(R.id.my_archive_settings)).perform(click());

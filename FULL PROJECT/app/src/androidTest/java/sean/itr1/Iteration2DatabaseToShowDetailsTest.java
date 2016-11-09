@@ -22,6 +22,7 @@ public class Iteration2DatabaseToShowDetailsTest {
     @Rule
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
+    // Issue: See series details: Scenario 1
     @Test
     public void databaseToShowDetailsTest() {
         Intents.init();

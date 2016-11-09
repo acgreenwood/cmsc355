@@ -20,6 +20,7 @@ public class MyArchiveSettings extends AppCompatActivity {
     public enum Sort {
         TITLE, TYPE, GENRE
     }
+
     public enum SortOrder {
         ASCENDING, DESCENDING
     }
@@ -46,14 +47,14 @@ public class MyArchiveSettings extends AppCompatActivity {
         if (choice.getId() == R.id.cancel_changes_button) {
             finish();
         } else if (choice.getId() == R.id.save_changes_button) {
-            if(titleSort.isChecked()) {
+            if (titleSort.isChecked()) {
                 changeSortSetting(Sort.TITLE);
-            } else if(typeSort.isChecked()) {
+            } else if (typeSort.isChecked()) {
                 changeSortSetting(Sort.TYPE);
-            } else if(genreSort.isChecked()) {
+            } else if (genreSort.isChecked()) {
                 changeSortSetting(Sort.GENRE);
             }
-            if(ascending.isChecked()) {
+            if (ascending.isChecked()) {
                 orderSetting = SortOrder.ASCENDING;
             } else {
                 orderSetting = SortOrder.DESCENDING;
@@ -69,5 +70,8 @@ public class MyArchiveSettings extends AppCompatActivity {
     public static Sort getSortSetting() {
         return sortSetting;
     }
-    public static SortOrder getOrderSetting() { return orderSetting; }
+
+    public static SortOrder getOrderSetting() {
+        return orderSetting;
+    }
 }

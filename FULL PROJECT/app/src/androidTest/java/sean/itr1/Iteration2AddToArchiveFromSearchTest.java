@@ -20,6 +20,7 @@ public class Iteration2AddToArchiveFromSearchTest {
     @Rule
     public ActivityTestRule<SearchPage> AddSeriesActvityTestRule = new ActivityTestRule<>(SearchPage.class);
 
+    // Issue: Add a Series to Personal Archive: Scenario 2
     @Test
     public void addToArchiveFromSearchTest() {
         Intents.init();

@@ -15,11 +15,13 @@ import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
+
 @RunWith(AndroidJUnit4.class)
 public class Iteration2HomeToMyArchiveTest {
     @Rule
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
+    // Issue: Add a Series to Personal Archive: Scenario 1
     @Test
     public void homeToMyArchiveTest() {
         Intents.init();

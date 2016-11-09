@@ -59,8 +59,8 @@ public class MyArchivePage extends AppCompatActivity {
 
     public void showDetails(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ShowInfo.class);
-        Series s = archiveSeries[position];
-        intent.putExtra("id", s.getId());
+        Series seriesAtPos = archiveSeries[position];
+        intent.putExtra("id", seriesAtPos.getId());
         startActivity(intent);
     }
 
@@ -86,17 +86,19 @@ public class MyArchivePage extends AppCompatActivity {
         Arrays.sort(series, new Comparator<Series>() {
             @Override
             public int compare(Series s1, Series s2) {
-                if(sortSetting == MyArchiveSettings.Sort.TITLE) {
+                if (sortSetting == MyArchiveSettings.Sort.TITLE) {
                     return (s1.getTitle().compareTo(s2.getTitle()));
-                } else if(sortSetting == MyArchiveSettings.Sort.TYPE) {
+                } else if (sortSetting == MyArchiveSettings.Sort.TYPE) {
                     return (s1.getType().compareTo(s2.getType()));
-                } else if(sortSetting == MyArchiveSettings.Sort.GENRE) {
+                } else if (sortSetting == MyArchiveSettings.Sort.GENRE) {
                     return (s1.getGenre().compareTo(s2.getGenre()));
-                } else return 0;
+                } else {
+                    return 0;
+                }
             }
         });
-        if(orderSetting == MyArchiveSettings.SortOrder.ASCENDING) {
-            for(int i = 0; i < series.length / 2; i++) {
+        if (orderSetting == MyArchiveSettings.SortOrder.ASCENDING) {
+            for (int i = 0; i < series.length / 2; i++) {
                 Series temp = series[i];
                 series[i] = series[series.length - 1 - i];
                 series[series.length - 1 - i] = temp;

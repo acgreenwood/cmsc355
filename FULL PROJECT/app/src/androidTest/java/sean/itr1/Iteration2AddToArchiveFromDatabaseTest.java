@@ -23,6 +23,7 @@ public class Iteration2AddToArchiveFromDatabaseTest {
     @Rule
     public ActivityTestRule<HomePage> AddSeriesActvityTestRule = new ActivityTestRule<>(HomePage.class);
 
+    // Issue: Add a Series to Personal Archive: Scenario 3
     @Test
     public void AddToArchiveFromDatabaseTest() {
         Intents.init();

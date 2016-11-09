@@ -45,8 +45,8 @@ public class MemoryDatabase {
         //separate each search term into termTokens
         String[] termTokens = terms.split(" ");
 
-        if(terms.isEmpty()) {
-            for(int i = 0; i < archive.size(); i++) {
+        if (terms.isEmpty()) {
+            for (int i = 0; i < archive.size(); i++) {
                 findings.add(getSeriesById(i));
             }
             return findings;
