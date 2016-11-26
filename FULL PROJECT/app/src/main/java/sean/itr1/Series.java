@@ -1,5 +1,7 @@
 package sean.itr1;
 
+import android.webkit.URLUtil;
+
 public class Series {
 
     /** Use these enums later */
@@ -16,6 +18,8 @@ public class Series {
     private String seriesType;
     private String seriesGenre;
     private String seriesDescription;
+    private String imdb;
+    private String wiki;
     private HoldStatus seriesHold;
 
     public Series(int id, String title, String type, String genre) {
@@ -42,6 +46,14 @@ public class Series {
         return seriesDescription;
     }
 
+    public String getImdb() {
+        return imdb;
+    }
+
+    public String getWiki() {
+        return wiki;
+    }
+
     public int getId() {
         return seriesId;
     }
@@ -53,6 +65,59 @@ public class Series {
     public void setDescription(String description) {
         seriesDescription = description;
     }
+
+    public boolean setImdb(String url) {
+        if(URLUtil.isHttpUrl(url)) {
+            if(url.substring(7, 26).compareTo("www.imdb.com/title/") == 0) {
+                imdb = url;
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if(URLUtil.isHttpsUrl(url)) {
+            if(url.substring(8, 27).compareTo("www.imdb.com/title/") == 0) {
+                imdb = url;
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if(url.substring(0, 19).compareTo("www.imdb.com/title/") == 0) {
+            imdb = url;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public boolean setWiki(String url) {
+        if(URLUtil.isHttpUrl(url)) {
+            if(url.substring(9, 29).compareTo(".wikipedia.org/wiki/") == 0) {
+                wiki = url;
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if(URLUtil.isHttpsUrl(url)) {
+            if(url.substring(10, 30).compareTo(".wikipedia.org/wiki/") == 0) {
+                wiki = url;
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
 
     public HoldStatus getHold() {
         return seriesHold;

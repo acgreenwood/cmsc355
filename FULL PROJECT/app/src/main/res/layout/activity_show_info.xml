@@ -40,12 +40,31 @@
         android:layout_marginTop="10dp" />
 
     <Button
+        android:text="@string/imdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imdb"
+        android:onClick="onClick"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:text="@string/wiki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wiki"
+        android:onClick="onClick"
+        android:layout_below="@+id/imdb"
+        android:layout_centerHorizontal="true" />
+
+    <Button
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/add_remove_archive"
+        android:layout_below="@+id/wiki"
         android:onClick="onClick" />
 
     <Button

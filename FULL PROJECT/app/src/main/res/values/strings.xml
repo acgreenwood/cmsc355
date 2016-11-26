@@ -75,4 +75,7 @@
     <string name="hold_episode">Episode</string>
     <string name="hold_timeStamp">Timestamp</string>
     <string name="add_hold">Add Hold</string>
+    <string name="imdb">IMDb Page</string>
+    <string name="wiki">Wikipedia Page</string>
+
 </resources>

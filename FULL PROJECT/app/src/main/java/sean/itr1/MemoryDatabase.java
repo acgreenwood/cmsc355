@@ -20,6 +20,25 @@ public class MemoryDatabase {
         archive.add(new Series(6, "The New Boston's Android Tutorials", "Internet", "Academic"));
         archive.add(new Series(7, "SpongeBob SquarePants", "Anime", "Romance"));
         archive.add(new Series(8, "Cory in the House", "Anime", "Comedy"));
+
+        archive.get(0).setImdb("http://www.imdb.com/title/tt4574334/");
+        archive.get(1).setImdb("http://www.imdb.com/title/tt1561755/");
+        archive.get(3).setImdb("http://www.imdb.com/title/tt0102926/");
+        archive.get(4).setImdb("http://www.imdb.com/title/tt2560140/");
+        archive.get(5).setImdb("http://www.imdb.com/title/tt0386676/");
+        archive.get(7).setImdb("http://www.imdb.com/title/tt0206512/");
+        archive.get(8).setImdb("http://www.imdb.com/title/tt0805815/");
+
+        archive.get(0).setWiki("https://en.wikipedia.org/wiki/Stranger_Things_(TV_series)");
+        archive.get(1).setWiki("https://en.wikipedia.org/wiki/Bob's_Burgers");
+        archive.get(2).setWiki("https://en.wikipedia.org/wiki/Harry_Potter");
+        archive.get(3).setWiki("https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)");
+        archive.get(4).setWiki("https://en.wikipedia.org/wiki/Attack_on_Titan");
+        archive.get(5).setWiki("https://en.wikipedia.org/wiki/The_Office_(U.S._TV_series)");
+        archive.get(7).setWiki("https://en.wikipedia.org/wiki/SpongeBob_SquarePants");
+        archive.get(8).setWiki("https://en.wikipedia.org/wiki/Cory_in_the_House");
+
+
     }
 
     /**
