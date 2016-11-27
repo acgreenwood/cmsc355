@@ -26,6 +26,7 @@
         <activity android:name=".AppearanceSettings" />
         <activity android:name=".MyArchiveSettings" />
         <activity android:name=".ShowInfo" />
+        <activity android:name=".LinkEditPage" />
     </application>
 
 </manifest>

@@ -28,13 +28,38 @@ public class ShowInfo extends AppCompatActivity {
 
         seriesToShow = MemoryDatabase.getSeriesById(getIntent().getExtras().getInt("id"));
 
-        //make this dependent on type of series? i.e. television show or movie only
-        //in other words, this button should not appear for books or anything else that would
-        //not usually have an imdb page -- this can be implemented once the enums
-        //created in Series.java are put into use?
+        //TODO: button to edit links for shows with existing links
+        //(currently only editable if show does not have a link)
+
         imdb = (Button) findViewById(R.id.imdb);
 
+        if((seriesToShow.getType().compareTo("Television") == 0) ||
+                 (seriesToShow.getType().compareTo("Movie") == 0) ||
+                 (seriesToShow.getType().compareTo("Anime") == 0)) {
+            //button changes depending on if show has imdb link or not
+            if(seriesToShow.getImdb() != null) {
+                imdb.setText("IMDb Link");
+            }
+            else {
+                imdb.setText("Add IMDb Link");
+            }
+        }
+        //button only appears if applicable
+        else {
+            imdb.setVisibility(View.INVISIBLE); //this hides the button but still uses it for layout calculation
+        }                                       //should probably rewrite layout calculation so that we can use
+                                                //View.GONE, but need to implement descriptions first, or at least
+                                                //decide what to do with descriptions (remove them?)
+
+
+        //button changes depending on if show has wikipedia link or not
         wiki = (Button) findViewById(R.id.wiki);
+        if(seriesToShow.getWiki() != null) {
+            wiki.setText("Wikipedia Link");
+        }
+        else {
+            wiki.setText("Add Wikipedia Link");
+        }
 
         returnToList = (Button) findViewById(R.id.return_to_list);
 
@@ -63,12 +88,24 @@ public class ShowInfo extends AppCompatActivity {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(seriesToShow.getImdb()));
                 startActivity(browserIntent);
             }
+            else {
+                //new screen for entering wikipedia link
+                Intent intent = new Intent(this, LinkEditPage.class);
+                intent.putExtra("id", seriesToShow.getId());
+                startActivity(intent);
+            }
         }
 
         if(choice.getId() == R.id.wiki) {
             if(seriesToShow.getWiki() != null) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(seriesToShow.getWiki()));
                 startActivity(browserIntent);
+            }
+            else {
+                //new screen for entering wikipedia link
+                Intent intent = new Intent(this, LinkEditPage.class);
+                intent.putExtra("id", seriesToShow.getId());
+                startActivity(intent);
             }
         }
 
@@ -84,6 +121,34 @@ public class ShowInfo extends AppCompatActivity {
             //Currently have it go back to list after adding to/removing from archive
             //Feel free to change this if you think it should work differently
             finish();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if((seriesToShow.getType().compareTo("Television") == 0) ||
+                (seriesToShow.getType().compareTo("Movie") == 0) ||
+                (seriesToShow.getType().compareTo("Anime") == 0)) {
+            //button changes depending on if show has imdb link or not
+            if(seriesToShow.getImdb() != null) {
+                imdb = (Button) findViewById(R.id.imdb);
+                imdb.setText("IMDb Link");
+            }
+            else {
+                imdb = (Button) findViewById(R.id.imdb);
+                imdb.setText("Add IMDb Link");
+            }
+        }
+
+        //button changes depending on if show has wikipedia link or not
+        if(seriesToShow.getWiki() != null) {
+            wiki = (Button) findViewById(R.id.wiki);
+            wiki.setText("Wikipedia Link");
+        }
+        else {
+            wiki = (Button) findViewById(R.id.wiki);
+            wiki.setText("Add Wikipedia Link");
         }
     }
 

@@ -77,5 +77,9 @@
     <string name="add_hold">Add Hold</string>
     <string name="imdb">IMDb Page</string>
     <string name="wiki">Wikipedia Page</string>
+    <string name="imdb_url">IMDb URL</string>
+    <string name="wiki_url">Wikipedia URL</string>
+    <string name="add_url">Update URL</string>
+    <string name="url_edit_message">Enter the URL for this series\' IMDb page and/or its Wikipedia page:</string>
 
 </resources>
