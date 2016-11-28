@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.CheckBox;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.CoordinatorLayout;
 import android.graphics.Color;
@@ -21,6 +22,7 @@ public class AddNewSeries extends AppCompatActivity {
 
     Button addSeries;
     Button cancelAddition;
+    CheckBox checkBox;
     EditText seriesName;
     EditText seriesType;
     EditText seriesGenre;
@@ -32,12 +34,14 @@ public class AddNewSeries extends AppCompatActivity {
 
         setContentView(R.layout.activity_add_new_series);
 
-        addSeries = (Button)findViewById(R.id.confirm_addition_button);
-        cancelAddition = (Button)findViewById(R.id.decline_addition_button);
+        addSeries = (Button) findViewById(R.id.confirm_addition_button);
+        cancelAddition = (Button) findViewById(R.id.decline_addition_button);
 
-        seriesName = (EditText)findViewById(R.id.series_name_edit_text);
-        seriesType = (EditText)findViewById(R.id.series_type_edit_text);
-        seriesGenre = (EditText)findViewById(R.id.series_genre_edit_text);
+        checkBox = (CheckBox) findViewById(R.id.check_box);
+
+        seriesName = (EditText) findViewById(R.id.series_name_edit_text);
+        seriesType = (EditText) findViewById(R.id.series_type_edit_text);
+        seriesGenre = (EditText) findViewById(R.id.series_genre_edit_text);
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
     }
@@ -49,12 +53,13 @@ public class AddNewSeries extends AppCompatActivity {
             String title = seriesName.getText().toString();
             String type = seriesType.getText().toString();
             String genre = seriesGenre.getText().toString();
+            int c = Color.rgb(255,102,102);
             if (title.isEmpty()){
                 Snackbar snackbar = Snackbar.make(coordinatorLayout, "Please enter a title!", Snackbar.LENGTH_SHORT);
 
                 View snackBarView = snackbar.getView();
 
-                snackBarView.setBackgroundColor(Color.rgb(255,102,102));
+                snackBarView.setBackgroundColor(c);
 
                 TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.BLACK);
@@ -66,7 +71,7 @@ public class AddNewSeries extends AppCompatActivity {
 
                 View snackBarView = snackbar.getView();
 
-                snackBarView.setBackgroundColor(Color.rgb(255,102,102));
+                snackBarView.setBackgroundColor(c);
 
                 TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.BLACK);
@@ -78,7 +83,7 @@ public class AddNewSeries extends AppCompatActivity {
 
                 View snackBarView = snackbar.getView();
 
-                snackBarView.setBackgroundColor(Color.rgb(255,102,102));
+                snackBarView.setBackgroundColor(c);
 
                 TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.BLACK);
@@ -86,7 +91,11 @@ public class AddNewSeries extends AppCompatActivity {
                 snackbar.show();
             }
             else {
-                SeriesArchiveApi.addSeries(new Series(0, title, type, genre));
+                int i = SeriesArchiveApi.getArchiveSize();
+                SeriesArchiveApi.addSeries(new Series(i, title, type, genre));
+                if(checkBox.isChecked()) {
+                    MyArchive.addSeries(new Series(i, title, type, genre));
+                }
                 finish();
             }
         }

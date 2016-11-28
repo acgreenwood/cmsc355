@@ -29,9 +29,6 @@ public class ShowInfo extends AppCompatActivity {
 
         seriesToShow = MemoryDatabase.getSeriesById(getIntent().getExtras().getInt("id"));
 
-        //TODO: button to edit links for shows with existing links
-        //(currently only editable if show does not have a link)
-
         imdb = (Button) findViewById(R.id.imdb);
 
         if((seriesToShow.getType().compareTo("Television") == 0) ||
@@ -67,10 +64,10 @@ public class ShowInfo extends AppCompatActivity {
         //button changes depending on if show is in my archive or not
         if (MyArchive.inMyArchive(seriesToShow.getId())) {
             removeFromArchive = (Button) findViewById(R.id.add_remove_archive);
-            removeFromArchive.setText("Remove from Archive");
+            removeFromArchive.setText("Remove from My Archive");
         } else {
             addToArchive = (Button) findViewById(R.id.add_remove_archive);
-            addToArchive.setText("Add to Archive");
+            addToArchive.setText("Add to My Archive");
         }
 
         linkPage = (Button) findViewById(R.id.edit_urls);
@@ -128,8 +125,6 @@ public class ShowInfo extends AppCompatActivity {
             } else {
                 MyArchive.addSeries(seriesToShow);
             }
-            //Currently have it go back to list after adding to/removing from archive
-            //Feel free to change this if you think it should work differently
             finish();
         }
     }
@@ -150,7 +145,6 @@ public class ShowInfo extends AppCompatActivity {
                 imdb.setText("Add IMDb Link");
             }
         }
-
         //button changes depending on if show has wikipedia link or not
         if(seriesToShow.getWiki() != null) {
             wiki = (Button) findViewById(R.id.wiki);

@@ -15,6 +15,7 @@ public class ListDisplay extends Activity implements OnItemClickListener {
     ListView listView;
     Series[] series;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class ListDisplay extends Activity implements OnItemClickListener {
         for (int i = 0; i < series.length; i++) {
             showArray[i] = "Title: " + series[i].getTitle()
                          + "\nType: " + series[i].getType()
-                         + "\nGenre: " + series[i].getGenre() + "\n";
+                         + "\nGenre: " + series[i].getGenre(); //+ "\n";
 
         }
         //array at end of method is array from which data is drawn for list

@@ -6,7 +6,10 @@
 package sean.itr1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +21,8 @@ public class SearchPage extends AppCompatActivity {
     Button addNewSeries;
     Button returnHome;
     TextView searchTerms;
+    int archiveSize;
+    CoordinatorLayout coordinatorLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +36,14 @@ public class SearchPage extends AppCompatActivity {
         addNewSeries = (Button)findViewById(R.id.add_new_series_button);
         //"Return to Home Page" button.
         returnHome = (Button)findViewById(R.id.return_home_button);
+
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+
+        archiveSize = SeriesArchiveApi.getArchiveSize();
     }
 
     public void onClick(View choice) {
         if (choice.getId() == R.id.search_confirm_basic) {
-            System.out.println("prepare for failure");
             if (SeriesArchiveApi.searchByTerms(searchTerms.getText().toString()).length == 0) {
                 Intent search = new Intent(this, NoShowExistsWindow.class);
                 startActivity(search);
@@ -52,4 +60,24 @@ public class SearchPage extends AppCompatActivity {
             startActivity(returnHome);
         }
     }
+
+    protected void onResume() {
+        super.onResume();
+
+        if(SeriesArchiveApi.getArchiveSize() > archiveSize) {
+            Snackbar snackbar = Snackbar.make(coordinatorLayout, "Series added!", Snackbar.LENGTH_SHORT);
+
+            View snackBarView = snackbar.getView();
+
+            snackBarView.setBackgroundColor(Color.rgb(102,255,102));
+
+            TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.BLACK);
+
+            snackbar.show();
+
+            archiveSize = SeriesArchiveApi.getArchiveSize();
+        }
+    }
+
 }

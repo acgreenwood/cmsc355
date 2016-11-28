@@ -18,9 +18,16 @@ public class MemoryDatabase {
         archive.add(new Series(4, "Attack On Titan", "Anime", "Action"));
         archive.add(new Series(5, "The Office", "Television", "Comedy"));
         archive.add(new Series(6, "The New Boston's Android Tutorials", "Internet", "Academic"));
-        archive.add(new Series(7, "SpongeBob SquarePants", "Anime", "Romance"));
+        archive.add(new Series(7, "SpongeBob SquarePants", "Television", "Comedy"));
         archive.add(new Series(8, "Cory in the House", "Anime", "Comedy"));
+        archive.add(new Series(9, "Westworld", "Television", "Drama"));
+        archive.add(new Series(10, "Suicide Squad", "Movie", "Action"));
+        archive.add(new Series(11, "Deadpool", "Movie", "Action"));
+        archive.add(new Series(12, "The Walking Dead", "Television", "Thriller"));
+        archive.add(new Series(13, "Me Before You", "Movie", "Romance"));
+        archive.add(new Series(14, "Game of Thrones", "Television", "Fantasy"));
 
+        //maybe remove one of these to use one of the series as an example for the add imdb link button??
         archive.get(0).setImdb("http://www.imdb.com/title/tt4574334/");
         archive.get(1).setImdb("http://www.imdb.com/title/tt1561755/");
         archive.get(3).setImdb("http://www.imdb.com/title/tt0102926/");
@@ -28,6 +35,12 @@ public class MemoryDatabase {
         archive.get(5).setImdb("http://www.imdb.com/title/tt0386676/");
         archive.get(7).setImdb("http://www.imdb.com/title/tt0206512/");
         archive.get(8).setImdb("http://www.imdb.com/title/tt0805815/");
+        archive.get(9).setImdb("http://www.imdb.com/title/tt0475784/");
+        archive.get(10).setImdb("http://www.imdb.com/title/tt1386697/");
+        archive.get(11).setImdb("http://www.imdb.com/title/tt1431045/");
+        archive.get(12).setImdb("http://www.imdb.com/title/tt1520211/");
+        archive.get(13).setImdb("http://www.imdb.com/title/tt2674426/");
+        archive.get(14).setImdb("http://www.imdb.com/title/tt0944947/");
 
         archive.get(0).setWiki("https://en.wikipedia.org/wiki/Stranger_Things_(TV_series)");
         archive.get(1).setWiki("https://en.wikipedia.org/wiki/Bob's_Burgers");
@@ -37,8 +50,12 @@ public class MemoryDatabase {
         archive.get(5).setWiki("https://en.wikipedia.org/wiki/The_Office_(U.S._TV_series)");
         archive.get(7).setWiki("https://en.wikipedia.org/wiki/SpongeBob_SquarePants");
         archive.get(8).setWiki("https://en.wikipedia.org/wiki/Cory_in_the_House");
-
-
+        archive.get(9).setWiki("https://en.wikipedia.org/wiki/Westworld_(TV_series)");
+        archive.get(10).setWiki("https://en.wikipedia.org/wiki/Suicide_Squad_(film)");
+        archive.get(11).setWiki("https://en.wikipedia.org/wiki/Deadpool_(film)");
+        archive.get(12).setWiki("https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)");
+        archive.get(13).setWiki("https://en.wikipedia.org/wiki/Me_Before_You_(film)");
+        archive.get(14).setWiki("https://en.wikipedia.org/wiki/Game_of_Thrones");
     }
 
     /**
