@@ -15,6 +15,7 @@ public class ShowInfo extends AppCompatActivity {
     Button wiki;
     Button addToArchive;
     Button removeFromArchive;
+    Button linkPage;
     Button returnToList;
     TextView title;
     TextView type;
@@ -72,6 +73,8 @@ public class ShowInfo extends AppCompatActivity {
             addToArchive.setText("Add to Archive");
         }
 
+        linkPage = (Button) findViewById(R.id.edit_urls);
+
         title = (TextView) findViewById(R.id.title);
         type = (TextView) findViewById(R.id.type);
         genre = (TextView) findViewById(R.id.genre);
@@ -109,10 +112,17 @@ public class ShowInfo extends AppCompatActivity {
             }
         }
 
-        if (choice.getId() == R.id.return_to_list) {
+        if(choice.getId() == R.id.edit_urls) {
+            Intent intent = new Intent(this, LinkEditPage.class);
+            intent.putExtra("id", seriesToShow.getId());
+            startActivity(intent);
+        }
+
+        if(choice.getId() == R.id.return_to_list) {
             finish();
         }
-        if (choice.getId() == R.id.add_remove_archive) {
+
+        if(choice.getId() == R.id.add_remove_archive) {
             if (MyArchive.inMyArchive(seriesToShow.getId())) {
                 MyArchive.removeSeries(seriesToShow);
             } else {

@@ -81,5 +81,6 @@
     <string name="wiki_url">Wikipedia URL</string>
     <string name="add_url">Update URL</string>
     <string name="url_edit_message">Enter the URL for this series\' IMDb page and/or its Wikipedia page:</string>
+    <string name="url_edit_page_button">Edit Links</string>
 
 </resources>

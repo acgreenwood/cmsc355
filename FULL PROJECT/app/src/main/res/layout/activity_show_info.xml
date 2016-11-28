@@ -68,12 +68,22 @@
         android:onClick="onClick" />
 
     <Button
+        android:text="@string/url_edit_page_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edit_urls"
+        android:layout_below="@+id/add_remove_archive"
+        android:onClick="onClick" />
+
+    <Button
         android:text="@string/back_button_appearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/return_to_list"
         android:onClick="onClick"
-        android:layout_below="@+id/add_remove_archive"
+        android:layout_below="@+id/edit_urls"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
