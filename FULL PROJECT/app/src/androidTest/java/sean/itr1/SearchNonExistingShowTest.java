@@ -22,8 +22,8 @@ public class SearchNonExistingShowTest {
     //Issue: Search the SEAN archive: Scenario 4
     @Test
     public void searchNonExistingShow() {
-        onView(withId(R.id.add_new_series_button)).perform(click());
-        onView(withId(R.id.add_series_to_database)).perform(click());
+        //onView(withId(R.id.add_new_series_button)).perform(click());
+        //onView(withId(R.id.add_series_to_database)).perform(click());
         onView(withId(R.id.search_show_title)).perform(typeText("asdfjkl;qweruiop"));
         Espresso.closeSoftKeyboard();
 

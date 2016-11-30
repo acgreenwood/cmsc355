@@ -40,8 +40,8 @@ public class SearchBlankTermsTest {
     //Issue: Search the SEAN archive: Scenario 3
     @Test
     public void searchBlankTerms() {
-        onView(withId(R.id.add_new_series_button)).perform(click());
-        onView(withId(R.id.add_series_to_database)).perform(click());
+        //onView(withId(R.id.add_new_series_button)).perform(click());
+        //onView(withId(R.id.add_series_to_database)).perform(click());
         onView(withId(R.id.search_show_title)).perform(typeText(""));
         Espresso.closeSoftKeyboard();
 
