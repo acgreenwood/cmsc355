@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.CheckBox;
+import android.widget.Toast;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.CoordinatorLayout;
 import android.graphics.Color;
@@ -96,10 +97,13 @@ public class AddNewSeries extends AppCompatActivity {
                 if(checkBox.isChecked()) {
                     MyArchive.addSeries(new Series(i, title, type, genre));
                 }
+
+                Toast.makeText(getApplicationContext(), "Series added to database", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }
         if (choice.getId() == R.id.cancel_action) {
+            Toast.makeText(getApplicationContext(), "Canceled addition of new series", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
