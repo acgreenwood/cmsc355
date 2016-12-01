@@ -3,14 +3,20 @@ package sean.itr1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 
 public class MyArchiveSettings extends AppCompatActivity {
 
     Button saveMyArchiveChanges;
     Button cancelMyArchiveChanges;
+    Context cancel = this;
     RadioButton titleSort;
     RadioButton typeSort;
     RadioButton ascending;
@@ -39,14 +45,37 @@ public class MyArchiveSettings extends AppCompatActivity {
         descending = (RadioButton) findViewById(R.id.a_z_sort);
         ascending = (RadioButton) findViewById(R.id.z_a_sort);
 
-        saveMyArchiveChanges = (Button)findViewById(R.id.save_changes_button);
-        cancelMyArchiveChanges = (Button)findViewById(R.id.cancel_changes_button);
+        saveMyArchiveChanges = (Button) findViewById(R.id.save_changes_button);
+        cancelMyArchiveChanges = (Button) findViewById(R.id.cancel_changes_button);
+
+        // add button listener
+        cancelMyArchiveChanges.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick (View view){
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(cancel);
+                alertDialogBuilder.setTitle("Cancel Changes");
+
+                alertDialogBuilder
+                        .setMessage("Leave Archive Settings? All unsaved changes will be lost.")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                MyArchiveSettings.this.finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog cancelArchiveChanges = alertDialogBuilder.create();
+                cancelArchiveChanges.show();
+            }
+        });
     }
 
     public void onClick(View choice) {
-        if (choice.getId() == R.id.cancel_changes_button) {
-            finish();
-        } else if (choice.getId() == R.id.save_changes_button) {
+        if (choice.getId() == R.id.save_changes_button) {
             if (titleSort.isChecked()) {
                 changeSortSetting(Sort.TITLE);
             } else if (typeSort.isChecked()) {
@@ -59,6 +88,8 @@ public class MyArchiveSettings extends AppCompatActivity {
             } else {
                 orderSetting = SortOrder.DESCENDING;
             }
+
+            Toast.makeText(getApplicationContext(), "Archive settings saved.", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
