@@ -48,6 +48,9 @@ public class MyArchiveSettings extends AppCompatActivity {
         saveMyArchiveChanges = (Button) findViewById(R.id.save_changes_button);
         cancelMyArchiveChanges = (Button) findViewById(R.id.cancel_changes_button);
 
+        //changes here are good, just need to figure out a way to have the currently selected
+        //option be the current settings rather than the default every time you open the menu
+
         // add button listener
         cancelMyArchiveChanges.setOnClickListener(new OnClickListener(){
             @Override

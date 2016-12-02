@@ -98,12 +98,15 @@ public class AddNewSeries extends AppCompatActivity {
                     MyArchive.addSeries(new Series(i, title, type, genre));
                 }
 
-                Toast.makeText(getApplicationContext(), "Series added to database", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Series added to database", Toast.LENGTH_SHORT).show();
+                //This is redundant, snackbar already pops up upon successful addition of new series
+                //See SearchPage.java onResume() method
+                //Should pick one or the other, using toast for cancelled addition is fine though
                 finish();
             }
         }
         if (choice.getId() == R.id.cancel_action) {
-            Toast.makeText(getApplicationContext(), "Canceled addition of new series", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Cancelled addition of new series", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
