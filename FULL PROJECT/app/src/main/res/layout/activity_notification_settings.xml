@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_notification_settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -11,21 +12,64 @@
     tools:context="sean.itr1.NotificationSettings">
 
     <TextView
-        android:text="@string/under_construction_message"
-        android:layout_width="wrap_content"
+        android:text="@string/notify_me_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/underConstruction"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/notify_title" />
+
+    <Switch
+        android:text="@string/new_releases_switch_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/new_releases_switch"
+        android:checked="true" />
+
+    <Switch
+        android:text="@string/current_status_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_status_switch" />
+
+    <Switch
+        android:text="@string/recommendations_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recommendations_switch" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notification_message_type_title"
+        android:text="@string/notification_type_title" />
+
+    <Switch
+        android:text="@string/send_e_mail_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/e_mail_switch"
+        android:checked="true" />
+
+    <Switch
+        android:text="@string/text_message_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_message_switch"
+        android:checked="true"
+        android:splitTrack="false" />
 
     <Button
-        android:text="Go Back"
-        android:layout_width="wrap_content"
+        android:text="@string/save_changes_switch"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/returnHome4"
+        android:id="@+id/save_changes_button"
+        android:layout_gravity="center_horizontal"
         android:onClick="onClick" />
-</RelativeLayout>
+
+    <Button
+        android:text="@string/notifications_changes_cancel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/returnHome4"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
