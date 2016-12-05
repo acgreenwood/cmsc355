@@ -6,7 +6,8 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class TddSeriesSetWikipediaLinkTest {
+public class TddSeriesSetWikipediaLinkTest1 {
+    //Issue: Edit Links Option: Scenario 4
     @Test
     public void setWikipediaLinkTest() throws Exception {
         Series newSeries = new Series(0, "hello", "hello", "hello");

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class TddSeriesSetImdbLinkTest2 {
+    //Issue: Edit Links Option: Scenario 2
     @Test
     public void setImdbLinkTest2() throws Exception {
         Series newSeries = new Series(0, "hello", "hello", "hello");
