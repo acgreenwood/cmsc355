@@ -19,9 +19,8 @@
     <string name="no">No</string>
     <string name="series_not_found_message">The series you entered in does not exist. Would you like to add the series into the database?</string>
     <string name="yes">Yes</string>
-    <string name="series_addition_message">Enter your information on the series you will be adding:</string>
+    <string name="series_addition_message">Enter information on the series you will be adding:</string>
     <string name="series_name_bar">Enter Series Name</string>
-    <string name="app_iteration_message">Note: This is a WIP app. Features will be added in future iterations of the app.</string>
     <string name="sean_homepage">SEAN: Series Entertainment Archive Network</string>
     <string name="search_option">Search for a series</string>
     <string name="archive_option">Go to My Archive</string>
@@ -83,13 +82,17 @@
     <string name="url_edit_message">Enter the URL for this series\' IMDb page and/or its Wikipedia page:</string>
     <string name="url_edit_page_button">Edit Links</string>
     <string name="notifications_changes_cancel">Cancel</string>
-    <string name="new_releases_switch_text">New releases for ongoing bookmarked series</string>
-    <string name="notification_type_title">Notification type:</string>
-    <string name="notify_me_title">Notify me on:</string>
+    <string name="new_releases_switch_text">New releases for ongoing series</string>
+    <string name="notification_type_title">Send notifications as:</string>
+    <string name="notify_me_title">Archive-Based Notifications:</string>
     <string name="recommendations_switch">Recommendations to bookmarked series</string>
     <string name="save_changes_switch">Save Changes</string>
-    <string name="current_status_switch">Updates on bookmarked series\' current status</string>
-    <string name="send_e_mail_switch">Send via e-mail</string>
-    <string name="text_message_switch">Send via text message</string>
+    <string name="current_status_switch">Updates on bookmarked series\' status</string>
+    <string name="send_e_mail_switch">E-mail</string>
+    <string name="text_message_switch">Text message</string>
+    <string name="notifications_active">Turn On Notifications</string>
+    <string name="monthly_additions_switch">New additions to database (Monthly basis)</string>
+    <string name="app_updates_switch">App updates</string>
+    <string name="app_wide_notifications_text">App-Wide Notifications</string>
 
 </resources>
