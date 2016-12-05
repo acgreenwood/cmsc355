@@ -82,5 +82,14 @@
     <string name="add_url">Update URL</string>
     <string name="url_edit_message">Enter the URL for this series\' IMDb page and/or its Wikipedia page:</string>
     <string name="url_edit_page_button">Edit Links</string>
+    <string name="notifications_changes_cancel">Cancel</string>
+    <string name="new_releases_switch_text">New releases for ongoing bookmarked series</string>
+    <string name="notification_type_title">Notification type:</string>
+    <string name="notify_me_title">Notify me on:</string>
+    <string name="recommendations_switch">Recommendations to bookmarked series</string>
+    <string name="save_changes_switch">Save Changes</string>
+    <string name="current_status_switch">Updates on bookmarked series\' current status</string>
+    <string name="send_e_mail_switch">Send via e-mail</string>
+    <string name="text_message_switch">Send via text message</string>
 
 </resources>
