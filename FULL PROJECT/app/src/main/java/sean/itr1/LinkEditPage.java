@@ -52,7 +52,8 @@ public class LinkEditPage extends AppCompatActivity {
 
     public void onClick(View choice) {
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(),
+                InputMethodManager.HIDE_NOT_ALWAYS); //this stuff hides soft keyboard on button press
         if(choice.getId() == R.id.confirm_wiki_url) {
             int i = seriesToEdit.getId();
             String s = wikiLinkUrl.getText().toString();
@@ -82,7 +83,32 @@ public class LinkEditPage extends AppCompatActivity {
             }
         }
         if(choice.getId() == R.id.confirm_imdb_url) {
-            MemoryDatabase.getSeriesById(seriesToEdit.getId()).setImdb(imdbLinkUrl.getText().toString());
+            int i = seriesToEdit.getId();
+            String s = imdbLinkUrl.getText().toString();
+            if(MemoryDatabase.getSeriesById(i).setImdb(s)) {
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, "URL updated.", Snackbar.LENGTH_SHORT);
+
+                View snackBarView = snackbar.getView();
+
+                snackBarView.setBackgroundColor(Color.rgb(102,255,102));
+
+                TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.BLACK);
+
+                snackbar.show();
+            }
+            else {
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, "Invalid URL!", Snackbar.LENGTH_SHORT);
+
+                View snackBarView = snackbar.getView();
+
+                snackBarView.setBackgroundColor(Color.rgb(255,102,102));
+
+                TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.BLACK);
+
+                snackbar.show();
+            }
         }
         if(choice.getId() == R.id.back_button) {
             finish();
