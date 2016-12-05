@@ -10,23 +10,43 @@ public class HoldStatus {
     private int seriesSeason;
     private int seriesEpisode;
     private int seriesTimeStamp;
+    private int seriesPageNumber;
+    private int seriesChapter;
 
     public HoldStatus() {
         seriesHold = false;
         seriesSeason = 0;
         seriesEpisode = 0;
         seriesTimeStamp = 0;
+        seriesPageNumber = 0;
+        seriesChapter = 0;
     }
 
     public HoldStatus(boolean hold, int season, int episode, int timeStamp) {
         seriesHold = hold;
         seriesSeason = season;
         seriesEpisode = episode;
+        seriesTimeStamp = 0;
+        seriesPageNumber = 0;
+        seriesChapter = 0;
     }
 
     public HoldStatus(boolean hold, int timeStamp) {
         seriesHold = hold;
         seriesTimeStamp = timeStamp;
+        seriesSeason = 0;
+        seriesEpisode = 0;
+        seriesPageNumber = 0;
+        seriesChapter = 0;
+    }
+
+    public HoldStatus(boolean hold, int pageNumber, int chapter) {
+        seriesHold = hold;
+        seriesTimeStamp = 0;
+        seriesSeason = 0;
+        seriesEpisode = 0;
+        seriesPageNumber = pageNumber;
+        seriesChapter = chapter;
     }
 
     public void setHoldStatus(boolean hold) {
@@ -45,6 +65,10 @@ public class HoldStatus {
         seriesTimeStamp = timeStamp;
     }
 
+    public void setSeriesPageNumber(int pageNumber) { seriesPageNumber = pageNumber; }
+
+    public void setSeriesChapter(int chapter) { seriesChapter = chapter; }
+
     public boolean getHold() {
         return seriesHold;
     }
@@ -60,4 +84,8 @@ public class HoldStatus {
     public int getSeriesTimeStamp() {
         return seriesTimeStamp;
     }
+
+    public int getSeriesPageNumber() { return seriesPageNumber; }
+
+    public int getSeriesChapter() { return seriesChapter; }
 }

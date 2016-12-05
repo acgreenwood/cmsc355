@@ -46,15 +46,6 @@
 
 
     <Button
-        android:text="@string/add_hold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add_hold_to_series"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick"/>
-
-    <Button
         android:text="@string/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,5 +66,38 @@
         android:layout_marginTop="27dp"
         android:layout_below="@+id/add_new_hold_message"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/add_hold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_hold_to_series"
+        android:onClick="onClick"
+        android:elevation="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/hold_pageNumber_edit_text"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hold_chapter_edit_text"
+        android:hint="@string/hold_chapter"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/hold_pageNumber_edit_text" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hold_pageNumber_edit_text"
+        android:hint="@string/hold_pageNumber"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_above="@+id/hold_chapter_edit_text"
+        android:layout_alignStart="@+id/hold_timeStamp_edit_text" />
 
 </RelativeLayout>
