@@ -75,6 +75,7 @@
     <string name="hold_timeStamp">Timestamp</string>
     <string name="hold_pageNumber">Page Number</string>
     <string name="hold_chapter">Chapter</string>
+    <string name="fill_text_fields_message">Please fill in the hold information.</string>
     <string name="add_hold">Add Hold</string>
     <string name="imdb">IMDb Page</string>
     <string name="wiki">Wikipedia Page</string>

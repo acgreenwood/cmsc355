@@ -21,6 +21,7 @@ public class AddNewHold extends AppCompatActivity {
     EditText holdTimeStamp;
     EditText holdPageNumber;
     EditText holdChapter;
+    View errorMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class AddNewHold extends AppCompatActivity {
         holdTimeStamp = (EditText)findViewById(R.id.hold_timeStamp_edit_text);
         holdPageNumber = (EditText)findViewById(R.id.hold_pageNumber_edit_text);
         holdChapter = (EditText)findViewById(R.id.hold_chapter_edit_text);
+        errorMessage = findViewById(R.id.fill_text_fields_message);
+        errorMessage.setVisibility(View.INVISIBLE);
 
         if(series.getType().equals("television") || series.getType().equals("anime")){ //hides text fields based on series type
             holdTimeStamp.setVisibility(View.INVISIBLE);
@@ -59,15 +62,33 @@ public class AddNewHold extends AppCompatActivity {
             HoldStatus theHold = new HoldStatus();
 
             if(series.getType().equals("television") || series.getType().equals("anime")){ //hides text fields based on series type
-                theHold.setSeriesSeason(Integer.parseInt(holdSeason.getText().toString()));
-                theHold.setSeriesEpisode(Integer.parseInt(holdEpisode.getText().toString()));
+                if(holdSeason.getText().equals("") || holdEpisode.getText().equals("")){  //brings up error message if there are empty fields
+                    errorMessage.setVisibility(View.VISIBLE);
+                }
+                if(!(holdSeason.getText().equals("") || holdEpisode.getText().equals(""))) { //if fields are filled, then add the hold
+                    theHold.setSeriesSeason(Integer.parseInt(holdSeason.getText().toString()));
+                    theHold.setSeriesEpisode(Integer.parseInt(holdEpisode.getText().toString()));
+                    finish();
+                }
             }
             else if(series.getType().equals("movie")){
-                theHold.setSeriesTimeStamp(Integer.parseInt(holdTimeStamp.getText().toString()));
+                if(holdTimeStamp.getText().equals("")){
+                    errorMessage.setVisibility(View.VISIBLE);
+                }
+                if(!(holdTimeStamp.getText().equals(""))){
+                    theHold.setSeriesTimeStamp(Integer.parseInt(holdTimeStamp.getText().toString()));
+                    finish();
+                }
             }
             else if(series.getType().equals("book")){
-                theHold.setSeriesChapter(Integer.parseInt(holdChapter.getText().toString()));
-                theHold.setSeriesPageNumber(Integer.parseInt(holdPageNumber.getText().toString()));
+                if(holdChapter.getText().equals("") || holdPageNumber.getText().equals("")){
+                    errorMessage.setVisibility(View.VISIBLE);
+                }
+                if(!(holdChapter.getText().equals("") || holdPageNumber.getText().equals(""))) {
+                    theHold.setSeriesChapter(Integer.parseInt(holdChapter.getText().toString()));
+                    theHold.setSeriesPageNumber(Integer.parseInt(holdPageNumber.getText().toString()));
+                    finish();
+                }
             }
         } else if (choice.getId() == R.id.cancel_action) {
             finish();
