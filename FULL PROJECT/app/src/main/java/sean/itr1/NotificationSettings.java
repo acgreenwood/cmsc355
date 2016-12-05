@@ -1,7 +1,6 @@
 package sean.itr1;
 
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +11,9 @@ public class NotificationSettings extends AppCompatActivity {
     public enum Notification{
         NEW_RELEASES,
         CURRENT_STATUS,
-        RECOMMENDATIONS
+        RECOMMENDATIONS,
+        NEW_ADDITIONS,
+        APP_UPDATES
     }
 
     public enum MessagingType{
@@ -28,6 +29,8 @@ public class NotificationSettings extends AppCompatActivity {
     Switch newReleases;
     Switch statusUpdates;
     Switch recommendations;
+    Switch newAdditions;
+    Switch postUpdates;
     Switch email;
     Switch textMessage;
 
@@ -40,18 +43,21 @@ public class NotificationSettings extends AppCompatActivity {
         saveNotificationSettings = (Button)findViewById(R.id.save_changes_button);
 
         //Switch calls for notifications to send out.
-        newReleases = (Switch)findViewById(R.id.new_releases_switch);
-        statusUpdates = (Switch)findViewById(R.id.update_status_switch);
+        newReleases = (Switch)findViewById(R.id.new_releases);
+        statusUpdates = (Switch)findViewById(R.id.status_updates);
         recommendations = (Switch)findViewById(R.id.recommendations_switch);
 
+        //Switches for app-based notifications
+        newAdditions = (Switch)findViewById(R.id.additions_monthly_message);
+        postUpdates = (Switch) findViewById(R.id.app_updates);
+
         //Switch calls for messaging type for app notifications.
-        email = (Switch)findViewById(R.id.e_mail_switch);
-        textMessage = (Switch)findViewById(R.id.text_message_switch);
+        email = (Switch)findViewById(R.id.send_e_mail);
+        textMessage = (Switch)findViewById(R.id.send_text);
     }
 
     public void onClick(View choice) {
         if (choice.getId() == R.id.save_changes_button){
-            //Switches for what notifications to send out.
             if (newReleases.isChecked()) {
                 changeNotificationSettings(Notification.NEW_RELEASES);
             }
@@ -61,7 +67,12 @@ public class NotificationSettings extends AppCompatActivity {
             if (recommendations.isChecked()) {
                 changeNotificationSettings(Notification.RECOMMENDATIONS);
             }
-
+            if (newAdditions.isChecked()){
+                changeNotificationSettings(Notification.NEW_ADDITIONS);
+            }
+            if (newAdditions.isChecked()){
+                changeNotificationSettings(Notification.APP_UPDATES);
+            }
             if (email.isChecked()) {
                 MessagingTypeSettings = MessagingType.E_MAIL;
             }
