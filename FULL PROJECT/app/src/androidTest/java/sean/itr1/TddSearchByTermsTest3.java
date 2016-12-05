@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class TddSearchByTermsTest3 {
+    //Issue: Memory Database (4 TDD Tests): Scenario 4
     @Test
     public void searchByTermsTest() throws Exception {
         ArrayList<Series> findings = MemoryDatabase.searchByTerms("the");

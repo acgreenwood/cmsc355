@@ -29,25 +29,27 @@ import static org.hamcrest.Matchers.anything;
 import static android.support.test.espresso.intent.Intents.intended;
 
 @RunWith(AndroidJUnit4.class)
-public class Iteration3WikipediaLinkTest {
+public class Iteration3EditLinksSnackbarTest2 {
     @Rule
     public ActivityTestRule<SearchPage> AddSeriesActvityTestRule = new ActivityTestRule<>(SearchPage.class);
 
-    // Issue: Wikipedia and Imbd links: Scenario 3
+    // Issue: Edit Links Option: Scenario 9
     @Test
-    public void wikipediaLinkTests() {
-        onView(withId(R.id.search_show_title)).perform(typeText("Silence of the Lambs"));
+    public void editLinksSnackbarTest2() {
+        onView(withId(R.id.search_show_title)).perform(typeText("Stranger Things"));
         Espresso.closeSoftKeyboard();
 
         onView(withId(R.id.search_confirm_basic)).perform(click());
         onData(anything()).inAdapterView(withId(R.id.show_list)).atPosition(0).perform(click());
 
-        Intents.init();
-        Matcher<Intent> expectedIntent = allOf(hasAction(Intent.ACTION_VIEW), hasData("https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)"));
-        intending(expectedIntent).respondWith(new Instrumentation.ActivityResult(0, null));
-        onView(withText("Wikipedia Link")).perform(click());
-        intended(expectedIntent);
-        Intents.release();
+        onView(withId(R.id.edit_urls)).perform(click());
+        onView(withId(R.id.confirm_imdb_url)).check(matches(isDisplayed()));
+
+        onView(withId(R.id.wiki_url_input)).perform(typeText("en.wikipedia.org/hello"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.confirm_wiki_url)).perform(click());
+        onView(allOf(withId(android.support.design.R.id.snackbar_text), withText("Invalid URL!")))
+                .check(matches(isDisplayed()));
     }
 
 }
