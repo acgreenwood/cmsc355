@@ -122,6 +122,9 @@ public class MemoryDatabase {
             }
         }
         //return the list of findings, which has most relevant listings at the end
+        for(int i = 0; i < findings.size() - 1; i ++) {
+            findings.add(findings.remove(findings.size() - i - 2));
+        }
         return findings;
     }
 
