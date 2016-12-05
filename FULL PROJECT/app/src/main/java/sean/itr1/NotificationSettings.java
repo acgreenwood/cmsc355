@@ -8,7 +8,7 @@ import android.widget.Switch;
 
 public class NotificationSettings extends AppCompatActivity {
 
-    public enum Notification{
+    public enum Notification {
         NEW_RELEASES,
         CURRENT_STATUS,
         RECOMMENDATIONS,
@@ -16,7 +16,7 @@ public class NotificationSettings extends AppCompatActivity {
         APP_UPDATES
     }
 
-    public enum MessagingType{
+    public enum MessagingType {
         E_MAIL,
         TEXT_MESSAGE
     }
@@ -57,7 +57,7 @@ public class NotificationSettings extends AppCompatActivity {
     }
 
     public void onClick(View choice) {
-        if (choice.getId() == R.id.save_changes_button){
+        if (choice.getId() == R.id.save_changes_button) {
             if (newReleases.isChecked()) {
                 changeNotificationSettings(Notification.NEW_RELEASES);
             }
@@ -67,16 +67,16 @@ public class NotificationSettings extends AppCompatActivity {
             if (recommendations.isChecked()) {
                 changeNotificationSettings(Notification.RECOMMENDATIONS);
             }
-            if (newAdditions.isChecked()){
+            if (newAdditions.isChecked()) {
                 changeNotificationSettings(Notification.NEW_ADDITIONS);
             }
-            if (newAdditions.isChecked()){
+            if (newAdditions.isChecked()) {
                 changeNotificationSettings(Notification.APP_UPDATES);
             }
             if (email.isChecked()) {
                 MessagingTypeSettings = MessagingType.E_MAIL;
             }
-            if (textMessage.isChecked()){
+            if (textMessage.isChecked()) {
                 MessagingTypeSettings = MessagingType.TEXT_MESSAGE;
             }
             finish();
@@ -86,7 +86,15 @@ public class NotificationSettings extends AppCompatActivity {
         }
     }
 
-    public void changeNotificationSettings(Notification newSettings) {NotifySettings = newSettings; }
-    public static Notification getNotificationSettings(){ return NotifySettings;}
-    public static MessagingType getMessageSettings(){ return MessagingTypeSettings;}
+    public void changeNotificationSettings(Notification newSettings) {
+        NotifySettings = newSettings;
+    }
+
+    public static Notification getNotificationSettings() {
+        return NotifySettings;
+    }
+
+    public static MessagingType getMessageSettings() {
+        return MessagingTypeSettings;
+    }
 }

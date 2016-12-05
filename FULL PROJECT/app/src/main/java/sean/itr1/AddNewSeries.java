@@ -49,53 +49,51 @@ public class AddNewSeries extends AppCompatActivity {
 
     public void onClick(View choice) {
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow((null == getCurrentFocus()) ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        inputManager.hideSoftInputFromWindow((null == getCurrentFocus())
+                ? null : getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         if (choice.getId() == R.id.add_series_to_database) {
             String title = seriesName.getText().toString();
             String type = seriesType.getText().toString();
             String genre = seriesGenre.getText().toString();
-            int c = Color.rgb(255,102,102);
-            if (title.isEmpty()){
+            int color = Color.rgb(255,102,102);
+            if (title.isEmpty()) {
                 Snackbar snackbar = Snackbar.make(coordinatorLayout, "Please enter a title!", Snackbar.LENGTH_SHORT);
 
                 View snackBarView = snackbar.getView();
 
-                snackBarView.setBackgroundColor(c);
+                snackBarView.setBackgroundColor(color);
 
                 TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.BLACK);
 
                 snackbar.show();
-            }
-            else if (type.isEmpty()){
+            } else if (type.isEmpty()) {
                 Snackbar snackbar = Snackbar.make(coordinatorLayout, "Please enter a type!", Snackbar.LENGTH_SHORT);
 
                 View snackBarView = snackbar.getView();
 
-                snackBarView.setBackgroundColor(c);
+                snackBarView.setBackgroundColor(color);
 
                 TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.BLACK);
 
                 snackbar.show();
-            }
-            else if (genre.isEmpty()){
+            } else if (genre.isEmpty()) {
                 Snackbar snackbar = Snackbar.make(coordinatorLayout, "Please enter a genre!", Snackbar.LENGTH_SHORT);
 
                 View snackBarView = snackbar.getView();
 
-                snackBarView.setBackgroundColor(c);
+                snackBarView.setBackgroundColor(color);
 
                 TextView textView = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                 textView.setTextColor(Color.BLACK);
 
                 snackbar.show();
-            }
-            else {
-                int i = SeriesArchiveApi.getArchiveSize();
-                SeriesArchiveApi.addSeries(new Series(i, title, type, genre));
-                if(checkBox.isChecked()) {
-                    MyArchive.addSeries(new Series(i, title, type, genre));
+            } else {
+                int size = SeriesArchiveApi.getArchiveSize();
+                SeriesArchiveApi.addSeries(new Series(size, title, type, genre));
+                if (checkBox.isChecked()) {
+                    MyArchive.addSeries(new Series(size, title, type, genre));
                 }
 
                 //Toast.makeText(getApplicationContext(), "Series added to database", Toast.LENGTH_SHORT).show();

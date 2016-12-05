@@ -52,9 +52,9 @@ public class MyArchiveSettings extends AppCompatActivity {
         //option be the current settings rather than the default every time you open the menu
 
         // add button listener
-        cancelMyArchiveChanges.setOnClickListener(new OnClickListener(){
+        cancelMyArchiveChanges.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick (View view){
+            public void onClick(View view) {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(cancel);
                 alertDialogBuilder.setTitle("Cancel Changes");
 

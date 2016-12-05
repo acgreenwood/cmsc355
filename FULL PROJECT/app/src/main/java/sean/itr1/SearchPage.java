@@ -64,7 +64,7 @@ public class SearchPage extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        if(SeriesArchiveApi.getArchiveSize() > archiveSize) {
+        if (SeriesArchiveApi.getArchiveSize() > archiveSize) {
             Snackbar snackbar = Snackbar.make(coordinatorLayout, "Series added!", Snackbar.LENGTH_SHORT);
 
             View snackBarView = snackbar.getView();

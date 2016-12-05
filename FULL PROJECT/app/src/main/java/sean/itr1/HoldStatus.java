@@ -65,9 +65,13 @@ public class HoldStatus {
         seriesTimeStamp = timeStamp;
     }
 
-    public void setSeriesPageNumber(int pageNumber) { seriesPageNumber = pageNumber; }
+    public void setSeriesPageNumber(int pageNumber) {
+        seriesPageNumber = pageNumber;
+    }
 
-    public void setSeriesChapter(int chapter) { seriesChapter = chapter; }
+    public void setSeriesChapter(int chapter) {
+        seriesChapter = chapter;
+    }
 
     public boolean getHold() {
         return seriesHold;
@@ -85,7 +89,11 @@ public class HoldStatus {
         return seriesTimeStamp;
     }
 
-    public int getSeriesPageNumber() { return seriesPageNumber; }
+    public int getSeriesPageNumber() {
+        return seriesPageNumber;
+    }
 
-    public int getSeriesChapter() { return seriesChapter; }
+    public int getSeriesChapter() {
+        return seriesChapter;
+    }
 }

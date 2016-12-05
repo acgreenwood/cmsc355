@@ -31,31 +31,25 @@ public class ShowInfo extends AppCompatActivity {
 
         imdb = (Button) findViewById(R.id.imdb);
 
-        if((seriesToShow.getType().compareTo("Television") == 0) ||
-                 (seriesToShow.getType().compareTo("Movie") == 0) ||
-                 (seriesToShow.getType().compareTo("Anime") == 0)) {
+        if ((seriesToShow.getType().compareTo("Television") == 0)
+                || (seriesToShow.getType().compareTo("Movie") == 0)
+                || (seriesToShow.getType().compareTo("Anime") == 0)) {
             //button changes depending on if show has imdb link or not
-            if(seriesToShow.getImdb() != null) {
+            if (seriesToShow.getImdb() != null) {
                 imdb.setText("IMDb Link");
-            }
-            else {
+            } else {
                 imdb.setText("Add IMDb Link");
             }
-        }
-        //button only appears if applicable
-        else {
+        } else {
             imdb.setVisibility(View.INVISIBLE); //this hides the button but still uses it for layout calculation
-        }                                       //should probably rewrite layout calculation so that we can use
-                                                //View.GONE, but need to implement descriptions first, or at least
-                                                //decide what to do with descriptions (remove them?)
+        }
 
 
         //button changes depending on if show has wikipedia link or not
         wiki = (Button) findViewById(R.id.wiki);
-        if(seriesToShow.getWiki() != null) {
+        if (seriesToShow.getWiki() != null) {
             wiki.setText("Wikipedia Link");
-        }
-        else {
+        } else {
             wiki.setText("Add Wikipedia Link");
         }
 
@@ -83,12 +77,11 @@ public class ShowInfo extends AppCompatActivity {
     }
 
     public void onClick(View choice) {
-        if(choice.getId() == R.id.imdb) {
-            if(seriesToShow.getImdb() != null) {
+        if (choice.getId() == R.id.imdb) {
+            if (seriesToShow.getImdb() != null) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(seriesToShow.getImdb()));
                 startActivity(browserIntent);
-            }
-            else {
+            } else {
                 //new screen for entering wikipedia link
                 Intent intent = new Intent(this, LinkEditPage.class);
                 intent.putExtra("id", seriesToShow.getId());
@@ -96,12 +89,11 @@ public class ShowInfo extends AppCompatActivity {
             }
         }
 
-        if(choice.getId() == R.id.wiki) {
-            if(seriesToShow.getWiki() != null) {
+        if (choice.getId() == R.id.wiki) {
+            if (seriesToShow.getWiki() != null) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(seriesToShow.getWiki()));
                 startActivity(browserIntent);
-            }
-            else {
+            } else {
                 //new screen for entering wikipedia link
                 Intent intent = new Intent(this, LinkEditPage.class);
                 intent.putExtra("id", seriesToShow.getId());
@@ -109,17 +101,17 @@ public class ShowInfo extends AppCompatActivity {
             }
         }
 
-        if(choice.getId() == R.id.edit_urls) {
+        if (choice.getId() == R.id.edit_urls) {
             Intent intent = new Intent(this, LinkEditPage.class);
             intent.putExtra("id", seriesToShow.getId());
             startActivity(intent);
         }
 
-        if(choice.getId() == R.id.return_to_list) {
+        if (choice.getId() == R.id.return_to_list) {
             finish();
         }
 
-        if(choice.getId() == R.id.add_remove_archive) {
+        if (choice.getId() == R.id.add_remove_archive) {
             if (MyArchive.inMyArchive(seriesToShow.getId())) {
                 MyArchive.removeSeries(seriesToShow);
             } else {
@@ -132,25 +124,23 @@ public class ShowInfo extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if((seriesToShow.getType().compareTo("Television") == 0) ||
-                (seriesToShow.getType().compareTo("Movie") == 0) ||
-                (seriesToShow.getType().compareTo("Anime") == 0)) {
+        if ((seriesToShow.getType().compareTo("Television") == 0)
+                || (seriesToShow.getType().compareTo("Movie") == 0)
+                || (seriesToShow.getType().compareTo("Anime") == 0)) {
             //button changes depending on if show has imdb link or not
-            if(seriesToShow.getImdb() != null) {
+            if (seriesToShow.getImdb() != null) {
                 imdb = (Button) findViewById(R.id.imdb);
                 imdb.setText("IMDb Link");
-            }
-            else {
+            } else {
                 imdb = (Button) findViewById(R.id.imdb);
                 imdb.setText("Add IMDb Link");
             }
         }
         //button changes depending on if show has wikipedia link or not
-        if(seriesToShow.getWiki() != null) {
+        if (seriesToShow.getWiki() != null) {
             wiki = (Button) findViewById(R.id.wiki);
             wiki.setText("Wikipedia Link");
-        }
-        else {
+        } else {
             wiki = (Button) findViewById(R.id.wiki);
             wiki.setText("Add Wikipedia Link");
         }
