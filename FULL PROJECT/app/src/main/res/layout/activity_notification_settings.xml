@@ -15,20 +15,20 @@
         android:text="@string/notify_me_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/notify_title" />
+        android:id="@+id/personal_notifications_text" />
 
     <Switch
         android:text="@string/new_releases_switch_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/new_releases_switch"
+        android:id="@+id/new_releases"
         android:checked="true" />
 
     <Switch
         android:text="@string/current_status_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/update_status_switch" />
+        android:id="@+id/status_updates" />
 
     <Switch
         android:text="@string/recommendations_switch"
@@ -37,39 +37,58 @@
         android:id="@+id/recommendations_switch" />
 
     <TextView
+        android:text="@string/app_wide_notifications_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/notification_message_type_title"
+        android:id="@+id/app_wide_notifications" />
+
+    <Switch
+        android:text="@string/monthly_additions_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/additions_monthly_message"
+        android:checked="true" />
+
+    <Switch
+        android:text="@string/app_updates_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_updates" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/send_notifications_type"
         android:text="@string/notification_type_title" />
 
     <Switch
         android:text="@string/send_e_mail_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/e_mail_switch"
+        android:id="@+id/send_e_mail"
         android:checked="true" />
 
     <Switch
         android:text="@string/text_message_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text_message_switch"
-        android:checked="true"
-        android:splitTrack="false" />
+        android:id="@+id/send_text"
+        android:checked="false"/>
 
     <Button
         android:text="@string/save_changes_switch"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/save_changes_button"
-        android:layout_gravity="center_horizontal"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:text="@string/notifications_changes_cancel"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/returnHome4"
         android:onClick="onClick"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"/>
+
 </LinearLayout>
